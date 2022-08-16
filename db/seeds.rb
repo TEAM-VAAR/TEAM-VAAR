@@ -5,3 +5,83 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+user1 = User.where(email: 'Agile_Ajay@test.test').first_or_create(password: '12345678', password_confirmation: '12345678')
+
+user2 = User.create(email: 'Ruby_Expert54@test.test', password: '12345678', password_confirmation: '12345678')
+
+user3 = User.create(email: 'surfer1992@test.test', password: '12345678', password_confirmation: '12345678')
+
+user4 = User.create(email: 'Postgres_Petunia@test.test', password: '12345678', password_confirmation: '12345678')
+
+school = [
+    {
+        name: "LEARN academy"
+    },
+    {
+        name: "Testing school"
+    },
+    {
+        name: "Super Coders"
+    },
+    {
+        name: "Virtual Programing"
+    },
+    {
+        name: "Caffeine Coders"
+    },
+    {
+        name: "LEET coders only"
+    }
+]
+
+review = [
+    {
+        title: "My first review",
+        date_posted: "January 10th",
+        review_text: "What a great experience. I really recommend this school to everyone who has ever wanted to code. Thanks everyone involved.",
+        user_id: 2,
+        school_id: 5
+
+    },
+    {
+        title: "Never again!!!!!",
+        date_posted: "February 22nd",
+        review_text: "I Grinded LEETcode for weeks and now I only know how to reverse binary trees in a hashmap recursive function!!",
+        user_id: 1,
+        school_id: 6
+    },
+    {
+        title: "Finally real instruction!",
+        date_posted: "May 17th",
+        review_text: "After grinding leetcode and getting no where I decided to attend LEARN academy. I finally understand programming as a full stack web developer!",
+        user_id: 1,
+        school_id: 6
+    },
+    {
+        title: "Coding beats surfing?",
+        date_posted: "June 1st",
+        review_text: "Surf all day, code all night!",
+        user_id: 3,
+        school_id: 3
+
+    },
+    {
+        title: "test test test TEST",
+        date_posted: "March 25th",
+        review_text: "I learned how to test code at this school, now I make ONE MILLION DOLLARS A MONTH!",
+        user_id: 4,
+        school_id: 2
+
+    }
+]
+
+school.each do |attribute|
+    School.create attribute 
+    puts "creating #{attribute}"
+end
+
+review.each do |attribute|
+    Review.create attribute
+    puts "creating #{attribute}"
+end
