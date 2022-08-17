@@ -2,6 +2,8 @@ import React from "react"
 import IndexPage from "./pages/IndexPage"
 import HomePage from './pages/HomePage'
 import Header from './components/Header'
+import ShowSchoolPage from "./pages/ShowSchoolPage"
+import ShowReviewPage from "./pages/ShowReviewPage"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
@@ -35,6 +37,8 @@ readSchool = () => {
 }
 
   render () {
+    // console.log(this.state.schools)
+    // console.log(this.state.reviews)
     return (
       <>
 
@@ -44,6 +48,15 @@ readSchool = () => {
             <Route exact path="/" component={HomePage} />
             {/* <Route path="/indexpage" component={IndexPage} />
             <Route path="/indexpage" render={(props) => <IndexPage {...props} schools={this.state.schools}/>} /> */}
+          <Route path="/schoolshow/:id" render ={(props) => {
+            let id = props.match.params.id
+            let school = this.state.schools.find(school => school.id === +id)
+            return <ShowSchoolPage school={school}/> }} />
+          <Route path="/reviewshow/:id" render ={(props) => {
+            let id = props.match.params.id
+            let review = this.state.reviews.find(review => review.id === +id)
+            return <ShowReviewPage review={review}/> }} />
+
           </Switch>
         </Router>
 
