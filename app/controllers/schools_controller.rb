@@ -4,7 +4,4 @@ class SchoolsController < ApplicationController
         render json: schools
     end
 
-    def show
-        @school = School.find(params[:id])
-    end
 end
