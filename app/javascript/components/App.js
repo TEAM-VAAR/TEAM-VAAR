@@ -37,8 +37,6 @@ readSchool = () => {
 }
 
   render () {
-    // console.log(this.state.schools)
-    // console.log(this.state.reviews)
     return (
       <>
 
