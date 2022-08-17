@@ -6896,3 +6896,2026 @@ Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 1.0ms | Allocations: 1907)
 Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 1.2ms | Allocations: 2730)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (43.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "capstone_vaar_development"[0m
+  [1m[35m (29.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "capstone_vaar_test"[0m
+  [1m[35m (140.6ms)[0m  [1m[35mCREATE DATABASE "capstone_vaar_development" ENCODING = 'unicode'[0m
+  [1m[35m (40.0ms)[0m  [1m[35mCREATE DATABASE "capstone_vaar_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "title" character varying, "date_posted" character varying, "review_text" text, "user_id" integer, "school_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "schools" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schools" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220816165323)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220815192801),
+(20220816165228);
+
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-08-17 22:29:01.690873"], ["updated_at", "2022-08-17 22:29:01.690873"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "a1bb0726ed1962976b403710acc4f5ded923bb7d"], ["created_at", "2022-08-17 22:29:01.693947"], ["updated_at", "2022-08-17 22:29:01.693947"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "title" character varying, "date_posted" character varying, "review_text" text, "user_id" integer, "school_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "schools" CASCADE[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schools" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220816165323)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220815192801),
+(20220816165228);
+
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-08-17 22:29:01.723092"], ["updated_at", "2022-08-17 22:29:01.723092"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-08-17 22:29:01.725469"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "a1bb0726ed1962976b403710acc4f5ded923bb7d"], ["created_at", "2022-08-17 22:29:01.727589"], ["updated_at", "2022-08-17 22:29:01.727589"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "Agile_Ajay@test.test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "agile_ajay@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "agile_ajay@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-08-17 22:29:02.035940"], ["updated_at", "2022-08-17 22:29:02.035940"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ruby_expert54@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "ruby_expert54@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-08-17 22:29:02.284129"], ["updated_at", "2022-08-17 22:29:02.284129"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (18.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "surfer1992@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "surfer1992@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-08-17 22:29:02.549677"], ["updated_at", "2022-08-17 22:29:02.549677"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "postgres_petunia@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "postgres_petunia@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-08-17 22:29:02.802003"], ["updated_at", "2022-08-17 22:29:02.802003"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Create (0.8ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "LEARN academy"], ["created_at", "2022-08-17 22:29:02.812321"], ["updated_at", "2022-08-17 22:29:02.812321"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Create (0.2ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Testing school"], ["created_at", "2022-08-17 22:29:02.814662"], ["updated_at", "2022-08-17 22:29:02.814662"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Create (0.3ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Super Coders"], ["created_at", "2022-08-17 22:29:02.816116"], ["updated_at", "2022-08-17 22:29:02.816116"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Create (0.5ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Virtual Programming"], ["created_at", "2022-08-17 22:29:02.817662"], ["updated_at", "2022-08-17 22:29:02.817662"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Create (0.3ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Caffeine Coders"], ["created_at", "2022-08-17 22:29:02.824125"], ["updated_at", "2022-08-17 22:29:02.824125"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Create (1.1ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "LEET coders only"], ["created_at", "2022-08-17 22:29:02.825690"], ["updated_at", "2022-08-17 22:29:02.825690"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools" ORDER BY "schools"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Create (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "date_posted", "review_text", "user_id", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "My first review"], ["date_posted", "January 10th"], ["review_text", "What a great experience. I really recommend this school to everyone who has ever wanted to code. Thanks everyone involved."], ["user_id", 2], ["school_id", 5], ["created_at", "2022-08-17 22:29:02.848421"], ["updated_at", "2022-08-17 22:29:02.848421"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "date_posted", "review_text", "user_id", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Never again!!!!!"], ["date_posted", "February 22nd"], ["review_text", "I Grinded LEETcode for weeks and now I only know how to reverse binary trees in a hashmap recursive function!!"], ["user_id", 1], ["school_id", 6], ["created_at", "2022-08-17 22:29:02.852379"], ["updated_at", "2022-08-17 22:29:02.852379"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "date_posted", "review_text", "user_id", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Finally real instruction!"], ["date_posted", "May 17th"], ["review_text", "After grinding leetcode and getting no where I decided to attend LEARN academy. I finally understand programming as a full stack web developer!"], ["user_id", 1], ["school_id", 1], ["created_at", "2022-08-17 22:29:02.855468"], ["updated_at", "2022-08-17 22:29:02.855468"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSchool Load (4.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "date_posted", "review_text", "user_id", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Coding beats surfing?"], ["date_posted", "June 1st"], ["review_text", "Surf all day, code all night!"], ["user_id", 3], ["school_id", 3], ["created_at", "2022-08-17 22:29:02.863051"], ["updated_at", "2022-08-17 22:29:02.863051"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "date_posted", "review_text", "user_id", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "test test test TEST"], ["date_posted", "March 25th"], ["review_text", "I learned how to test code at this school, now I make ONE MILLION DOLLARS A MONTH!"], ["user_id", 4], ["school_id", 2], ["created_at", "2022-08-17 22:29:02.866153"], ["updated_at", "2022-08-17 22:29:02.866153"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2022-08-17 15:29:10 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 5063)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 2b64634b35b5fbd8c5ef
+Version: webpack 4.46.0
+Time: 5660ms
+Built at: 08/17/2022 3:29:20 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-0f4cc773cd038c6016b4.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-0f4cc773cd038c6016b4.js.map   4.6 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-5731ea3e322c524eda1c.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-5731ea3e322c524eda1c.js.map   4.6 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-0f4cc773cd038c6016b4.js js/application-0f4cc773cd038c6016b4.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-5731ea3e322c524eda1c.js js/server_rendering-5731ea3e322c524eda1c.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.02 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 9646.7ms | Allocations: 175926)
+Completed 200 OK in 9653ms (Views: 9649.5ms | ActiveRecord: 0.0ms | Allocations: 181292)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:29:20 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:29:20 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (1.7ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 51ms (Views: 8.1ms | ActiveRecord: 37.4ms | Allocations: 11097)
+
+
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 136ms (Views: 67.1ms | ActiveRecord: 61.6ms | Allocations: 19208)
+
+
+Started GET "/showreview/1" for ::1 at 2022-08-17 15:29:33 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"showreview/1"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 520)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 7034)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 7422)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:29:34 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:29:34 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (0.6ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.6ms | Allocations: 1756)
+
+
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 2751)
+
+
+Started GET "/reviewshow/1" for ::1 at 2022-08-17 15:29:47 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewshow/1"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 7024)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 7410)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:29:47 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:29:47 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1867)
+
+
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 2730)
+
+
+Started GET "/schoolshow/1" for ::1 at 2022-08-17 15:29:52 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolshow/1"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 516)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 7113)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 7500)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 15:29:52 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 15:29:52 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 2019)
+
+
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 1.1ms | Allocations: 2822)
+
+
+Started GET "/" for ::1 at 2022-08-17 15:29:55 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 510)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 7001)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 7387)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:29:55 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:29:55 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+Processing by SchoolsController#index as */*
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.5ms | Allocations: 1860)
+
+
+  [1m[36mSchool Load (1.0ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 1.0ms | Allocations: 2254)
+
+
+Started GET "/" for ::1 at 2022-08-17 15:37:52 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 559)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: bc73c60774f065644ff8
+Version: webpack 4.46.0
+Time: 1598ms
+Built at: 08/17/2022 3:37:54 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-e8c20b4f1e896b875e8d.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-e8c20b4f1e896b875e8d.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-30cafd433ef10ce713e9.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-30cafd433ef10ce713e9.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-e8c20b4f1e896b875e8d.js js/application-e8c20b4f1e896b875e8d.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-30cafd433ef10ce713e9.js js/server_rendering-30cafd433ef10ce713e9.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2499.3ms | Allocations: 8534)
+Completed 200 OK in 2501ms (Views: 2500.3ms | Allocations: 9373)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 15:37:54 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 15:37:54 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mSchool Load (1.0ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 36ms (Views: 31.4ms | ActiveRecord: 14.3ms | Allocations: 13730)
+
+
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 13.9ms | Allocations: 12552)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:38:03 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 519)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 7113)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 7499)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 15:38:03 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 15:38:03 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (1.8ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 1.8ms | Allocations: 1799)
+
+
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 2729)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:38:27 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 565)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: de859959dfb7f53d8e20
+Version: webpack 4.46.0
+Time: 1586ms
+Built at: 08/17/2022 3:38:30 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-195f79f32d5b4ca81d16.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-195f79f32d5b4ca81d16.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-06ecb61feca426d7d243.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-06ecb61feca426d7d243.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-195f79f32d5b4ca81d16.js js/application-195f79f32d5b4ca81d16.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-06ecb61feca426d7d243.js js/server_rendering-06ecb61feca426d7d243.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2405.2ms | Allocations: 8652)
+Completed 200 OK in 2407ms (Views: 2406.2ms | ActiveRecord: 0.0ms | Allocations: 9496)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:38:30 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:38:30 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 22ms (Views: 3.8ms | ActiveRecord: 15.5ms | Allocations: 7336)
+
+
+Completed 200 OK in 24ms (Views: 3.0ms | ActiveRecord: 15.7ms | Allocations: 10379)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:38:41 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 509)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 7021)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 7407)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 15:38:41 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 15:38:41 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.4ms | Allocations: 1786)
+
+
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 2729)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:40:47 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 516)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 7028)
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 0.0ms | Allocations: 7414)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:40:47 -0700
+Processing by ReviewsController#index as */*
+Started GET "/schools" for ::1 at 2022-08-17 15:40:47 -0700
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.5ms | Allocations: 1831)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1284)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:40:56 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 7027)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 7413)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:40:56 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:40:56 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 1.2ms | Allocations: 1489)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1284)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:41:01 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 565)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 7188)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 8031)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:41:02 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:41:02 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 2.2ms | ActiveRecord: 2.9ms | Allocations: 5749)
+
+
+Completed 200 OK in 28ms (Views: 4.2ms | ActiveRecord: 4.6ms | Allocations: 10738)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:42:46 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 563)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: bb176ee1aea2d1f49271
+Version: webpack 4.46.0
+Time: 1586ms
+Built at: 08/17/2022 3:42:49 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-8a4fae6eb244acc54e9a.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-8a4fae6eb244acc54e9a.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-960e0a209e6fbfc8f4c9.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-960e0a209e6fbfc8f4c9.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-8a4fae6eb244acc54e9a.js js/application-8a4fae6eb244acc54e9a.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-960e0a209e6fbfc8f4c9.js js/server_rendering-960e0a209e6fbfc8f4c9.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2453.3ms | Allocations: 8647)
+Completed 200 OK in 2455ms (Views: 2454.3ms | ActiveRecord: 0.0ms | Allocations: 9490)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 15:42:49 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 15:42:49 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (1.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 3.5ms | ActiveRecord: 8.4ms | Allocations: 8599)
+
+
+Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 4.3ms | Allocations: 7678)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:43:23 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 565)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 034d88203c4b003006b1
+Version: webpack 4.46.0
+Time: 1559ms
+Built at: 08/17/2022 3:43:25 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-7152c9e88de958211927.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-7152c9e88de958211927.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-29e6e8f37c30d96ae829.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-29e6e8f37c30d96ae829.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-7152c9e88de958211927.js js/application-7152c9e88de958211927.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-29e6e8f37c30d96ae829.js js/server_rendering-29e6e8f37c30d96ae829.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2396.4ms | Allocations: 8564)
+Completed 200 OK in 2398ms (Views: 2397.6ms | ActiveRecord: 0.0ms | Allocations: 9406)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:43:25 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:43:25 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (2.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+  [1m[36mSchool Load (1.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 41ms (Views: 11.6ms | ActiveRecord: 12.9ms | Allocations: 9110)
+
+
+Completed 200 OK in 34ms (Views: 8.7ms | ActiveRecord: 13.9ms | Allocations: 7921)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:46:53 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 561)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: f09edb4de1cac24d02fb
+Version: webpack 4.46.0
+Time: 1606ms
+Built at: 08/17/2022 3:46:55 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-d91f071d24ca671d640b.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-d91f071d24ca671d640b.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-eac8eaf5aa154a4fc47c.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-eac8eaf5aa154a4fc47c.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-d91f071d24ca671d640b.js js/application-d91f071d24ca671d640b.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-eac8eaf5aa154a4fc47c.js js/server_rendering-eac8eaf5aa154a4fc47c.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2519.3ms | Allocations: 8649)
+Completed 200 OK in 2522ms (Views: 2521.9ms | ActiveRecord: 0.0ms | Allocations: 9493)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:46:55 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:46:55 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.7ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 2.5ms | ActiveRecord: 10.9ms | Allocations: 6693)
+
+
+Completed 200 OK in 19ms (Views: 2.7ms | ActiveRecord: 11.2ms | Allocations: 10695)
+
+
+Started GET "/" for ::1 at 2022-08-17 15:49:16 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1269)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 903e44c651968ea60c50
+Version: webpack 4.46.0
+Time: 1618ms
+Built at: 08/17/2022 3:49:18 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-6d8eba6b32418d44afa5.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-6d8eba6b32418d44afa5.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-0a15d9dedf48aa8f9f87.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-0a15d9dedf48aa8f9f87.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-6d8eba6b32418d44afa5.js js/application-6d8eba6b32418d44afa5.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-0a15d9dedf48aa8f9f87.js js/server_rendering-0a15d9dedf48aa8f9f87.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2552.7ms | Allocations: 59549)
+Completed 200 OK in 2557ms (Views: 2554.7ms | ActiveRecord: 0.0ms | Allocations: 64014)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:49:19 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:49:19 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 28ms (Views: 6.0ms | ActiveRecord: 15.8ms | Allocations: 15116)
+
+
+  [1m[36mSchool Load (0.7ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 42ms (Views: 7.7ms | ActiveRecord: 30.9ms | Allocations: 17213)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:49:24 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 513)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 7031)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 7419)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 15:49:24 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 15:49:24 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.7ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.7ms | Allocations: 1401)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.8ms | Allocations: 1435)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:50:01 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 557)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 69526bd42514da1d31d2
+Version: webpack 4.46.0
+Time: 1586ms
+Built at: 08/17/2022 3:50:03 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-fccb2a7c093f96f6d9d6.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-fccb2a7c093f96f6d9d6.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-abe3aa3ad14d3830a12a.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-abe3aa3ad14d3830a12a.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-fccb2a7c093f96f6d9d6.js js/application-fccb2a7c093f96f6d9d6.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-abe3aa3ad14d3830a12a.js js/server_rendering-abe3aa3ad14d3830a12a.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2405.1ms | Allocations: 8557)
+Completed 200 OK in 2407ms (Views: 2405.9ms | ActiveRecord: 0.0ms | Allocations: 9399)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:50:03 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:50:03 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 3.1ms | ActiveRecord: 5.4ms | Allocations: 7205)
+
+
+Completed 200 OK in 13ms (Views: 2.4ms | ActiveRecord: 5.0ms | Allocations: 9315)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:50:23 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 563)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 29b4b911798a5aa9cf19
+Version: webpack 4.46.0
+Time: 1608ms
+Built at: 08/17/2022 3:50:25 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-ad74bb7f2d2c626aa701.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-ad74bb7f2d2c626aa701.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-9cc731a26e89071c1544.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-9cc731a26e89071c1544.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-ad74bb7f2d2c626aa701.js js/application-ad74bb7f2d2c626aa701.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-9cc731a26e89071c1544.js js/server_rendering-9cc731a26e89071c1544.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2338.7ms | Allocations: 8745)
+Completed 200 OK in 2340ms (Views: 2339.4ms | ActiveRecord: 0.0ms | Allocations: 9587)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:50:26 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:50:26 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+  [1m[36mSchool Load (4.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 4.0ms | ActiveRecord: 8.4ms | Allocations: 9381)
+
+
+Completed 200 OK in 19ms (Views: 3.2ms | ActiveRecord: 13.1ms | Allocations: 8450)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:50:51 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 555)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 95c279b578ecf2d255f1
+Version: webpack 4.46.0
+Time: 1557ms
+Built at: 08/17/2022 3:50:53 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-2b3b044d4b061cac62ba.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-2b3b044d4b061cac62ba.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-3fbf76f5bf66021ad425.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-3fbf76f5bf66021ad425.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-2b3b044d4b061cac62ba.js js/application-2b3b044d4b061cac62ba.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-3fbf76f5bf66021ad425.js js/server_rendering-3fbf76f5bf66021ad425.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2312.2ms | Allocations: 8643)
+Completed 200 OK in 2314ms (Views: 2313.4ms | ActiveRecord: 0.0ms | Allocations: 9486)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 15:50:53 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 15:50:53 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (0.7ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (5.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 23ms (Views: 5.0ms | ActiveRecord: 12.5ms | Allocations: 7950)
+
+
+Completed 200 OK in 26ms (Views: 4.5ms | ActiveRecord: 17.1ms | Allocations: 10225)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:53:00 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 561)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 2fc9c8c3da02e345dcfc
+Version: webpack 4.46.0
+Time: 1589ms
+Built at: 08/17/2022 3:53:03 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-0cedb9f761a590587c59.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-0cedb9f761a590587c59.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-d310719466f0c242939a.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-d310719466f0c242939a.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-0cedb9f761a590587c59.js js/application-0cedb9f761a590587c59.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-d310719466f0c242939a.js js/server_rendering-d310719466f0c242939a.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2421.1ms | Allocations: 8649)
+Completed 200 OK in 2423ms (Views: 2422.4ms | ActiveRecord: 0.0ms | Allocations: 9493)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 15:53:03 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 15:53:03 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.7ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Processing by ReviewsController#index as */*
+Completed 200 OK in 23ms (Views: 7.2ms | ActiveRecord: 10.0ms | Allocations: 6398)
+
+
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 33ms (Views: 9.2ms | ActiveRecord: 8.2ms | Allocations: 7344)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:54:05 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 565)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 26da2d73096cb114eb95
+Version: webpack 4.46.0
+Time: 1593ms
+Built at: 08/17/2022 3:54:08 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-da0e2ba97acba36faba8.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-da0e2ba97acba36faba8.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-d27cd3dc844c9e8ba50d.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-d27cd3dc844c9e8ba50d.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-da0e2ba97acba36faba8.js js/application-da0e2ba97acba36faba8.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-d27cd3dc844c9e8ba50d.js js/server_rendering-d27cd3dc844c9e8ba50d.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2495.0ms | Allocations: 8654)
+Completed 200 OK in 2497ms (Views: 2496.1ms | ActiveRecord: 0.0ms | Allocations: 9498)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 15:54:08 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 15:54:08 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 3.5ms | ActiveRecord: 3.9ms | Allocations: 8503)
+
+
+Completed 200 OK in 14ms (Views: 2.6ms | ActiveRecord: 3.0ms | Allocations: 9195)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:54:12 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 579)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: a9c04cd38cf433aa4fe8
+Version: webpack 4.46.0
+Time: 1567ms
+Built at: 08/17/2022 3:54:15 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-d148034291c417aebb01.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-d148034291c417aebb01.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-64d4c9d0c2d750294bdd.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-64d4c9d0c2d750294bdd.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-d148034291c417aebb01.js js/application-d148034291c417aebb01.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-64d4c9d0c2d750294bdd.js js/server_rendering-64d4c9d0c2d750294bdd.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2232.1ms | Allocations: 8709)
+Completed 200 OK in 2234ms (Views: 2233.1ms | ActiveRecord: 0.0ms | Allocations: 9552)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:54:15 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:54:15 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (3.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 4.4ms | ActiveRecord: 6.8ms | Allocations: 7732)
+
+
+Completed 200 OK in 16ms (Views: 5.0ms | ActiveRecord: 6.3ms | Allocations: 9237)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:55:05 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 561)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 26da2d73096cb114eb95
+Version: webpack 4.46.0
+Time: 1447ms
+Built at: 08/17/2022 3:55:07 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-da0e2ba97acba36faba8.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-da0e2ba97acba36faba8.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-d27cd3dc844c9e8ba50d.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-d27cd3dc844c9e8ba50d.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-da0e2ba97acba36faba8.js js/application-da0e2ba97acba36faba8.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-d27cd3dc844c9e8ba50d.js js/server_rendering-d27cd3dc844c9e8ba50d.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2035.4ms | Allocations: 8649)
+Completed 200 OK in 2037ms (Views: 2036.2ms | ActiveRecord: 0.0ms | Allocations: 9493)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:55:08 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:55:08 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 34ms (Views: 18.7ms | ActiveRecord: 7.4ms | Allocations: 9437)
+
+
+Completed 200 OK in 35ms (Views: 17.6ms | ActiveRecord: 12.7ms | Allocations: 7798)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:55:58 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 555)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: bbf0cee664e263f5a756
+Version: webpack 4.46.0
+Time: 1557ms
+Built at: 08/17/2022 3:56:00 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-bccdb6e76d4e96fc3335.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-bccdb6e76d4e96fc3335.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-889c058fbfd4eee70899.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-889c058fbfd4eee70899.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-bccdb6e76d4e96fc3335.js js/application-bccdb6e76d4e96fc3335.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-889c058fbfd4eee70899.js js/server_rendering-889c058fbfd4eee70899.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2180.0ms | Allocations: 8648)
+Completed 200 OK in 2182ms (Views: 2181.4ms | ActiveRecord: 0.0ms | Allocations: 9492)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:56:00 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:56:00 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (2.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 28ms (Views: 13.8ms | ActiveRecord: 9.0ms | Allocations: 8076)
+
+
+Completed 200 OK in 29ms (Views: 12.0ms | ActiveRecord: 13.7ms | Allocations: 9301)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:56:35 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 515)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 7024)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 7410)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:56:35 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:56:35 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (3.9ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  [1m[36mReview Load (4.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 3.9ms | Allocations: 1810)
+
+
+Completed 200 OK in 14ms (Views: 8.3ms | ActiveRecord: 4.3ms | Allocations: 3121)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:56:56 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 563)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 2e3ce74a502ddee524bd
+Version: webpack 4.46.0
+Time: 1566ms
+Built at: 08/17/2022 3:56:58 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-45783a0b7c1a470d0399.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-45783a0b7c1a470d0399.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-61613cf0ed9e810a09a1.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-61613cf0ed9e810a09a1.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-45783a0b7c1a470d0399.js js/application-45783a0b7c1a470d0399.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-61613cf0ed9e810a09a1.js js/server_rendering-61613cf0ed9e810a09a1.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2197.7ms | Allocations: 8653)
+Completed 200 OK in 2199ms (Views: 2198.4ms | ActiveRecord: 0.0ms | Allocations: 9497)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 15:56:58 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 15:56:58 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 2.7ms | ActiveRecord: 10.5ms | Allocations: 8575)
+
+
+Completed 200 OK in 19ms (Views: 2.8ms | ActiveRecord: 11.9ms | Allocations: 8883)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:57:09 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 559)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: ece0b1ca984cb5dfac1b
+Version: webpack 4.46.0
+Time: 1533ms
+Built at: 08/17/2022 3:57:12 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-ac547f4e6e4ed07d0088.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-ac547f4e6e4ed07d0088.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-0b5c8d65342521e2558b.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-0b5c8d65342521e2558b.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-ac547f4e6e4ed07d0088.js js/application-ac547f4e6e4ed07d0088.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-0b5c8d65342521e2558b.js js/server_rendering-0b5c8d65342521e2558b.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2190.2ms | Allocations: 8681)
+Completed 200 OK in 2192ms (Views: 2191.0ms | ActiveRecord: 0.0ms | Allocations: 9525)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:57:12 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:57:12 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mSchool Load (0.6ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 3.6ms | ActiveRecord: 12.6ms | Allocations: 6307)
+
+
+Completed 200 OK in 24ms (Views: 4.7ms | ActiveRecord: 13.9ms | Allocations: 10671)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:57:56 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 555)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 4c9ec0951aefead0d690
+Version: webpack 4.46.0
+Time: 1531ms
+Built at: 08/17/2022 3:57:59 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-c7931b82e17af5eee901.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-c7931b82e17af5eee901.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-9a2bb4c4bfb668054541.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-9a2bb4c4bfb668054541.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-c7931b82e17af5eee901.js js/application-c7931b82e17af5eee901.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-9a2bb4c4bfb668054541.js js/server_rendering-9a2bb4c4bfb668054541.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2177.3ms | Allocations: 8643)
+Completed 200 OK in 2179ms (Views: 2178.0ms | ActiveRecord: 0.0ms | Allocations: 9487)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:57:59 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:57:59 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 3.3ms | ActiveRecord: 4.0ms | Allocations: 9403)
+
+
+Completed 200 OK in 11ms (Views: 3.0ms | ActiveRecord: 5.8ms | Allocations: 8679)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 15:59:44 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 553)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 946bf94d765e2c1c150f
+Version: webpack 4.46.0
+Time: 1569ms
+Built at: 08/17/2022 3:59:47 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-eb0c803cd0a45d2a2b64.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-eb0c803cd0a45d2a2b64.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-118bdc95434ee23d2732.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-118bdc95434ee23d2732.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-eb0c803cd0a45d2a2b64.js js/application-eb0c803cd0a45d2a2b64.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-118bdc95434ee23d2732.js js/server_rendering-118bdc95434ee23d2732.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2401.1ms | Allocations: 8645)
+Completed 200 OK in 2403ms (Views: 2402.2ms | ActiveRecord: 0.0ms | Allocations: 9489)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 15:59:47 -0700
+Started GET "/schools" for ::1 at 2022-08-17 15:59:47 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (1.0ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 24ms (Views: 4.4ms | ActiveRecord: 14.5ms | Allocations: 9402)
+
+
+Completed 200 OK in 22ms (Views: 2.7ms | ActiveRecord: 16.6ms | Allocations: 8454)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 16:00:06 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 565)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: a651384c64e0249bd99e
+Version: webpack 4.46.0
+Time: 1581ms
+Built at: 08/17/2022 4:00:08 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-9882364900d511c1bc56.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-9882364900d511c1bc56.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-182c13601b970b04dbdc.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-182c13601b970b04dbdc.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-9882364900d511c1bc56.js js/application-9882364900d511c1bc56.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-182c13601b970b04dbdc.js js/server_rendering-182c13601b970b04dbdc.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2293.0ms | Allocations: 8832)
+Completed 200 OK in 2295ms (Views: 2294.4ms | ActiveRecord: 0.0ms | Allocations: 9676)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:00:08 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:00:08 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (1.6ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 31ms (Views: 3.8ms | ActiveRecord: 16.9ms | Allocations: 9321)
+
+
+Completed 200 OK in 29ms (Views: 3.1ms | ActiveRecord: 21.2ms | Allocations: 8780)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 16:05:09 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 555)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 1af28da30c25e4d0e3b2
+Version: webpack 4.46.0
+Time: 1656ms
+Built at: 08/17/2022 4:05:12 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-5fe03247fdc0519caf6b.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-5fe03247fdc0519caf6b.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-dcc1beb1baac29950081.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-dcc1beb1baac29950081.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-5fe03247fdc0519caf6b.js js/application-5fe03247fdc0519caf6b.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-dcc1beb1baac29950081.js js/server_rendering-dcc1beb1baac29950081.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2550.7ms | Allocations: 8644)
+Completed 200 OK in 2552ms (Views: 2551.7ms | ActiveRecord: 0.0ms | Allocations: 9488)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 16:05:12 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 16:05:12 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (0.9ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 2.8ms | ActiveRecord: 4.9ms | Allocations: 8146)
+
+
+Completed 200 OK in 10ms (Views: 3.0ms | ActiveRecord: 3.3ms | Allocations: 7929)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-17 16:05:15 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 519)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 7028)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 7414)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:05:15 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:05:15 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 1423)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1285)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-17 16:05:44 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 563)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 835ce358936e0cde6e8c
+Version: webpack 4.46.0
+Time: 1536ms
+Built at: 08/17/2022 4:05:46 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-7aa73ca75d43646333c7.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-7aa73ca75d43646333c7.js.map  4.59 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-811db8b12fe5cb485144.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-811db8b12fe5cb485144.js.map  4.59 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-7aa73ca75d43646333c7.js js/application-7aa73ca75d43646333c7.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-811db8b12fe5cb485144.js js/server_rendering-811db8b12fe5cb485144.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2352.0ms | Allocations: 8651)
+Completed 200 OK in 2354ms (Views: 2352.8ms | ActiveRecord: 0.0ms | Allocations: 9495)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:05:46 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:05:46 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+  [1m[36mSchool Load (1.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 5.3ms | ActiveRecord: 5.1ms | Allocations: 9437)
+
+
+Completed 200 OK in 12ms (Views: 2.2ms | ActiveRecord: 6.2ms | Allocations: 7746)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-17 16:05:57 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 529)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 7128)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 7515)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:05:57 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:05:57 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.8ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.8ms | Allocations: 1335)
+
+
+  [1m[36mReview Load (3.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 8.1ms | ActiveRecord: 3.4ms | Allocations: 3445)
+
+
+Started GET "/" for ::1 at 2022-08-17 16:05:58 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 510)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 7001)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 7387)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 16:05:58 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 16:05:58 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.5ms | Allocations: 1437)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (3.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 4.2ms | ActiveRecord: 3.3ms | Allocations: 1379)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-17 16:05:59 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 516)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 7025)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 7411)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:05:59 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:05:59 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 1811)
+
+
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 2769)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-17 16:06:02 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 522)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 7121)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 7509)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:06:02 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:06:02 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.6ms | Allocations: 1896)
+
+
+  [1m[36mSchool Load (0.6ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 2710)
+
+
+Started GET "/" for ::1 at 2022-08-17 16:06:03 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 7003)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 7389)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:06:03 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:06:03 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1582)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1284)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-17 16:06:05 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 508)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 7017)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 7404)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:06:05 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:06:05 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1473)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1284)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-17 16:06:58 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 567)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 988831ddd6a9519f6c8e
+Version: webpack 4.46.0
+Time: 1738ms
+Built at: 08/17/2022 4:07:00 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-ab000dc3ec5defea075d.js  4.45 MiB       application  [emitted] [immutable]  application
+     js/application-ab000dc3ec5defea075d.js.map   4.6 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-a279189db9fbc0a1fd5e.js  4.45 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-a279189db9fbc0a1fd5e.js.map   4.6 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-ab000dc3ec5defea075d.js js/application-ab000dc3ec5defea075d.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-a279189db9fbc0a1fd5e.js js/server_rendering-a279189db9fbc0a1fd5e.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.05 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 456 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2567.5ms | Allocations: 8656)
+Completed 200 OK in 2569ms (Views: 2568.9ms | ActiveRecord: 0.0ms | Allocations: 9500)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:07:00 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:07:00 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 3.8ms | ActiveRecord: 5.0ms | Allocations: 9492)
+
+
+Completed 200 OK in 12ms (Views: 1.9ms | ActiveRecord: 6.9ms | Allocations: 8240)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 16:07:02 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 509)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 7108)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 7495)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:07:02 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:07:02 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+Processing by SchoolsController#index as */*
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.5ms | Allocations: 1861)
+
+
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 2254)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-17 16:07:03 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 508)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 7017)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 7403)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:07:03 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:07:03 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1446)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 1284)
+
+
+Started GET "/" for ::1 at 2022-08-17 16:07:04 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 526)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 7107)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 7494)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:07:04 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:07:04 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Processing by SchoolsController#index as */*
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 1818)
+
+
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.5ms | Allocations: 1539)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 16:07:05 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 522)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 7032)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 7419)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:07:05 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:07:05 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+Processing by SchoolsController#index as */*
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 1.2ms | Allocations: 1872)
+
+
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 2254)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 16:07:09 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 7023)
+Completed 200 OK in 45ms (Views: 44.3ms | ActiveRecord: 0.0ms | Allocations: 7409)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:07:09 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:07:09 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.6ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 1354)
+
+
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.8ms | Allocations: 3363)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 16:07:14 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 7028)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 7415)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:07:14 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:07:14 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 1501)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1284)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-17 16:07:15 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 7024)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 7410)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 16:07:15 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 16:07:15 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1352)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1379)
+
+
+Started GET "/aboutus" for ::1 at 2022-08-17 16:07:19 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"aboutus"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 7069)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 7455)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 16:07:19 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 16:07:19 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 1389)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1379)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-17 16:07:20 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 508)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 7059)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 7446)
+
+
+Started GET "/schools" for ::1 at 2022-08-17 16:07:20 -0700
+Started GET "/reviews" for ::1 at 2022-08-17 16:07:20 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1360)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1379)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-17 16:07:21 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 7100)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 7487)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:07:21 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:07:21 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.6ms | Allocations: 1530)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 1284)
+
+
+Started GET "/" for ::1 at 2022-08-17 16:07:22 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 528)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 7036)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 7422)
+
+
+Started GET "/reviews" for ::1 at 2022-08-17 16:07:22 -0700
+Started GET "/schools" for ::1 at 2022-08-17 16:07:22 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1909)
+
+
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 2769)
+
+

@@ -1,9 +1,10 @@
 import React from "react"
-import IndexPage from "./pages/IndexPage"
+import SchoolIndexPage from "./pages/SchoolIndexPage"
 import HomePage from './pages/HomePage'
 import Header from './components/Header'
 import ShowSchoolPage from "./pages/ShowSchoolPage"
 import ShowReviewPage from "./pages/ShowReviewPage"
+import ReviewIndexPage from "./pages/ReviewIndexPage"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
@@ -44,8 +45,9 @@ readSchool = () => {
           <Header />
           <Switch>
             <Route exact path="/" component={HomePage} />
-            {/* <Route path="/indexpage" component={IndexPage} />
-            <Route path="/indexpage" render={(props) => <IndexPage {...props} schools={this.state.schools}/>} /> */}
+            <Route path="/schoolindex" render={(props) => <SchoolIndexPage schools={this.state.schools}/>} />
+            <Route path="/reviewindex" render={(props) => <ReviewIndexPage reviews={this.state.reviews}/>} />
+          
           <Route path="/schoolshow/:id" render ={(props) => {
             let id = props.match.params.id
             let school = this.state.schools.find(school => school.id === +id)

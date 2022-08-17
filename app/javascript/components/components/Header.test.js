@@ -8,6 +8,6 @@ describe("When Header renders", () => {
   it("displays 5 total NavItem", () => {
     const header = shallow(<Header />)
     const headerHeading = header.find("NavItem")
-    expect(headerHeading.length).toEqual(5)
+    expect(headerHeading.length).toEqual(6)
   })
 })

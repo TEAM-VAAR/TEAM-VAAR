@@ -26,6 +26,15 @@ class Header extends Component {
             </NavItem>
           }
 
+          {/* School index link for all users */}
+          {
+            <NavItem>
+              <a href="/schoolindex" className="nav-link">
+                All Schools
+              </a>
+            </NavItem>
+          }
+
           {/* Review index link for all users */}
           {
             <NavItem>
