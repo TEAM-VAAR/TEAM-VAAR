@@ -42,7 +42,7 @@ readSchool = () => {
       <>
 
         <Router>
-          <Header />
+        <Header {...this.props}/>
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/schoolindex" render={(props) => <SchoolIndexPage schools={this.state.schools}/>} />

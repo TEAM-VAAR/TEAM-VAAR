@@ -8919,3 +8919,1189 @@ Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1909)
 Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 2769)
 
 
+Started GET "/" for ::1 at 2022-08-18 09:44:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1257)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 71940e4c313cdebd79f2
+Version: webpack 4.46.0
+Time: 1667ms
+Built at: 08/18/2022 9:44:54 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-00fc076e480ef7e8b050.js  4.46 MiB       application  [emitted] [immutable]  application
+     js/application-00fc076e480ef7e8b050.js.map   4.6 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-6b1ec214d227ed6b6d63.js  4.46 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-6b1ec214d227ed6b6d63.js.map   4.6 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-00fc076e480ef7e8b050.js js/application-00fc076e480ef7e8b050.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-6b1ec214d227ed6b6d63.js js/server_rendering-6b1ec214d227ed6b6d63.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.18 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 458 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2752.8ms | Allocations: 68035)
+Completed 200 OK in 2758ms (Views: 2755.9ms | ActiveRecord: 0.0ms | Allocations: 72506)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 09:44:54 -0700
+Started GET "/schools" for ::1 at 2022-08-18 09:44:54 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (4.8ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 4.6ms | ActiveRecord: 12.6ms | Allocations: 12298)
+
+
+Completed 200 OK in 30ms (Views: 8.4ms | ActiveRecord: 14.5ms | Allocations: 19723)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-18 09:50:05 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 513)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 7048)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.0ms | Allocations: 7441)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 09:50:05 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 09:50:05 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (2.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 2.1ms | Allocations: 2038)
+
+
+  [1m[36mReview Load (4.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 4.2ms | Allocations: 2798)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-18 09:50:10 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 526)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 7063)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms | Allocations: 7456)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 09:50:10 -0700
+Started GET "/schools" for ::1 at 2022-08-18 09:50:10 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 1473)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 1290)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-18 09:50:13 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 510)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 7043)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 7435)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 09:50:13 -0700
+Started GET "/schools" for ::1 at 2022-08-18 09:50:13 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 1884)
+
+
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 2736)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-18 09:50:15 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 532)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 7072)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 7464)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 09:50:15 -0700
+Started GET "/schools" for ::1 at 2022-08-18 09:50:15 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.1ms | Allocations: 1886)
+
+
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 2717)
+
+
+Started GET "/" for ::1 at 2022-08-18 11:17:29 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1251)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.4ms | Allocations: 39724)
+Completed 200 OK in 56ms (Views: 53.4ms | ActiveRecord: 0.0ms | Allocations: 44195)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 11:17:30 -0700
+Started GET "/schools" for ::1 at 2022-08-18 11:17:30 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (12.6ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 72ms (Views: 24.4ms | ActiveRecord: 44.0ms | Allocations: 12346)
+
+
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 84ms (Views: 49.7ms | ActiveRecord: 28.8ms | Allocations: 18862)
+
+
+Started GET "/" for ::1 at 2022-08-18 11:17:44 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 563)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Documents/capstone/TEAM-VAAR/public/packs
+[Webpacker] Hash: 4dc21d3f4eda8f9289eb
+Version: webpack 4.46.0
+Time: 1602ms
+Built at: 08/18/2022 11:17:47 AM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-285653e049a28075558b.js  4.46 MiB       application  [emitted] [immutable]  application
+     js/application-285653e049a28075558b.js.map   4.6 MiB       application  [emitted] [dev]        application
+         js/hello_react-147b6869ece6919ca329.js  1.25 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-147b6869ece6919ca329.js.map  1.44 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-be9b04fe628f9447c187.js  4.46 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-be9b04fe628f9447c187.js.map   4.6 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-285653e049a28075558b.js js/application-285653e049a28075558b.js.map
+Entrypoint hello_react = js/hello_react-147b6869ece6919ca329.js js/hello_react-147b6869ece6919ca329.js.map
+Entrypoint server_rendering = js/server_rendering-be9b04fe628f9447c187.js js/server_rendering-be9b04fe628f9447c187.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.18 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 216 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {hello_react} {server_rendering} [built]
+    + 458 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2523.8ms | Allocations: 8709)
+Completed 200 OK in 2526ms (Views: 2525.0ms | ActiveRecord: 0.0ms | Allocations: 9559)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 11:17:47 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 11:17:47 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (1.0ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 3.7ms | ActiveRecord: 4.9ms | Allocations: 8657)
+
+
+Completed 200 OK in 12ms (Views: 2.4ms | ActiveRecord: 3.6ms | Allocations: 8722)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-08-18 11:17:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 247)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 675)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 24.0ms | Allocations: 9377)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 15937)
+Completed 200 OK in 48ms (Views: 33.9ms | ActiveRecord: 3.8ms | Allocations: 21955)
+
+
+Started GET "/" for ::1 at 2022-08-18 15:33:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 84.7ms | Allocations: 58510)
+Completed 200 OK in 89ms (Views: 86.7ms | ActiveRecord: 0.0ms | Allocations: 62980)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 15:33:47 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 15:33:47 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (21.4ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 60ms (Views: 7.2ms | ActiveRecord: 30.0ms | Allocations: 12936)
+
+
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 65ms (Views: 21.8ms | ActiveRecord: 16.7ms | Allocations: 17766)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-18 15:34:06 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 521)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 7062)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 7457)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:34:06 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:34:06 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 1.8ms | Allocations: 1900)
+
+
+  [1m[36mSchool Load (0.7ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 2732)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-18 15:34:15 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 530)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 7063)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 7455)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:34:15 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:34:15 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+Processing by SchoolsController#index as */*
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 1870)
+
+
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 2260)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-08-18 15:34:18 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 861)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 6427)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 12981)
+Completed 200 OK in 40ms (Views: 25.3ms | ActiveRecord: 3.6ms | Allocations: 19697)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-08-18 15:34:19 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 241)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 228)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2306)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 8866)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 10325)
+
+
+Started GET "/aboutus" for ::1 at 2022-08-18 15:34:22 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"aboutus"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 510)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 7046)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 7439)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:34:22 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:34:22 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1522)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1290)
+
+
+Started GET "/aboutus" for ::1 at 2022-08-18 15:34:24 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"aboutus"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 7052)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 7445)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 15:34:24 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 15:34:24 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1507)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1385)
+
+
+Started GET "/aboutus" for ::1 at 2022-08-18 15:34:44 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"aboutus"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 7047)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 7439)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:34:44 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:34:44 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1513)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1290)
+
+
+Started GET "/" for ::1 at 2022-08-18 15:34:46 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 7029)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 7422)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 15:34:46 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 15:34:46 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (0.7ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.7ms | Allocations: 1772)
+
+
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 2716)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-18 15:34:47 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 510)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 7043)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 7435)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:34:47 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:34:47 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1574)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1290)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-18 15:34:49 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 524)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 7057)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.0ms | Allocations: 7450)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:34:49 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:34:49 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.8ms | Allocations: 1880)
+
+
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 2716)
+
+
+Started GET "/aboutus" for ::1 at 2022-08-18 15:34:51 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"aboutus"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 7052)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 7445)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 15:34:51 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 15:34:51 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 1445)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1385)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-08-18 15:34:53 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 142)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1273)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 7825)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 8638)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-08-18 15:34:54 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 86)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1255)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 7811)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 8544)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-08-18 15:35:03 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 142)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1273)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 7821)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 8619)
+
+
+Started GET "/" for ::1 at 2022-08-18 15:35:14 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 520)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 7035)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 7427)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:35:14 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:35:14 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1435)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1290)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-18 15:35:24 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 7047)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.0ms | Allocations: 7439)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:35:24 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:35:24 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 1440)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1290)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-18 15:35:25 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 520)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 7053)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 7445)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 15:35:25 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 15:35:25 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1495)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1385)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-18 15:35:26 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 524)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 7057)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 7449)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:35:26 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:35:26 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.6ms | Allocations: 1864)
+
+
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 2719)
+
+
+Started GET "/aboutus" for ::1 at 2022-08-18 15:35:28 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"aboutus"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 7048)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 7440)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:35:28 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:35:28 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1470)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1290)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-18 15:35:39 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 510)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 7043)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 7436)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:35:39 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:35:39 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Processing by SchoolsController#index as */*
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1828)
+
+
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1545)
+
+
+Started GET "/" for ::1 at 2022-08-18 15:35:59 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 510)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 7025)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 7417)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:35:59 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:35:59 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 2062)
+
+
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 2777)
+
+
+Started GET "/aboutus" for ::1 at 2022-08-18 15:36:06 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"aboutus"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 516)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 7049)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms | Allocations: 7442)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:36:06 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:36:06 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 1920)
+
+
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 2760)
+
+
+Started GET "/" for ::1 at 2022-08-18 15:36:22 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 7038)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms | Allocations: 7431)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:36:22 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:36:22 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1831)
+
+
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 2735)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-18 15:36:23 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 7051)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 7443)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:36:23 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:36:23 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1464)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1290)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-18 15:36:23 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 508)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 7042)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 7435)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 15:36:23 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 15:36:23 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1469)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1385)
+
+
+Started GET "/" for ::1 at 2022-08-18 15:36:30 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 508)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 7023)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 7415)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:36:30 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:36:30 -0700
+Processing by ReviewsController#index as */*
+Processing by SchoolsController#index as */*
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 1859)
+
+
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 2716)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-18 15:36:31 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 508)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 7041)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 7433)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:36:31 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:36:31 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Processing by SchoolsController#index as */*
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1609)
+
+
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1545)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-18 15:36:31 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 522)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 7055)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 7447)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 15:36:31 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 15:36:31 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1455)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1385)
+
+
+Started GET "/notfound" for ::1 at 2022-08-18 15:37:34 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"notfound"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 508)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 7041)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 7433)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:37:34 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:37:34 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 1501)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1290)
+
+
+Started GET "/gfkdga" for ::1 at 2022-08-18 15:37:41 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"gfkdga"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 7055)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 7448)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 15:37:41 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 15:37:41 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1529)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1385)
+
+
+Started GET "/aboutus" for ::1 at 2022-08-18 15:37:56 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"aboutus"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 516)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 7050)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 7442)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 15:37:56 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 15:37:56 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+Processing by ReviewsController#index as */*
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1776)
+
+
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 2261)
+
+
+Started GET "/" for ::1 at 2022-08-18 15:38:30 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 516)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 7031)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 7423)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 15:38:30 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 15:38:30 -0700
+Processing by SchoolsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mSchool Load (1.0ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 1.0ms | Allocations: 1784)
+
+
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 2716)
+
+
+Started GET "/" for ::1 at 2022-08-18 15:39:29 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 7027)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 7420)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:39:29 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:39:29 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1521)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 1290)
+
+
+Started GET "/schoolindex" for ::1 at 2022-08-18 15:39:30 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 504)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 7042)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 7435)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 15:39:30 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 15:39:30 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1449)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1385)
+
+
+Started GET "/reviewindex" for ::1 at 2022-08-18 15:39:33 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 522)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 7055)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 7448)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:39:33 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:39:33 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Processing by SchoolsController#index as */*
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1836)
+
+
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1545)
+
+
+Started GET "/showindex/1" for ::1 at 2022-08-18 15:39:52 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"showindex/1"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 508)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 7045)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 7437)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:39:53 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:39:53 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1592)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1290)
+
+
+Started GET "/showschool/1" for ::1 at 2022-08-18 15:40:00 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"showschool/1"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 516)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 7049)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 7441)
+
+
+Started GET "/schools" for ::1 at 2022-08-18 15:40:00 -0700
+Started GET "/reviews" for ::1 at 2022-08-18 15:40:00 -0700
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Processing by ReviewsController#index as */*
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 1736)
+
+
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1640)
+
+
+Started GET "/schoolshow/1" for ::1 at 2022-08-18 15:40:05 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"schoolshow/1"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 7045)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 7437)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:40:05 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:40:05 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1476)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1290)
+
+
+Started GET "/reviewshow/1" for ::1 at 2022-08-18 15:40:22 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"reviewshow/1"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 7045)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 7437)
+
+
+Started GET "/reviews" for ::1 at 2022-08-18 15:40:23 -0700
+Started GET "/schools" for ::1 at 2022-08-18 15:40:23 -0700
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 1510)
+
+
+Processing by SchoolsController#index as */*
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/controllers/schools_controller.rb:4:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 1290)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-08-18 15:41:01 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 142)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1273)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 7821)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 8623)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-08-18 15:41:03 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 86)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1255)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 7811)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 8548)
+
+
