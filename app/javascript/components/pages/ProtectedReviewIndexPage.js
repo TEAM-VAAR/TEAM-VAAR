@@ -5,20 +5,6 @@ import { Nav, NavItem } from 'reactstrap'
 class ProtectedReviewIndexPage extends Component {
     render() {
         
-
-        if(this.props.isLoading === true) {
-            return(
-                <>
-                <h1>Loading</h1>
-                </>
-            )
-        } else if(this.props.isLoading === false) {
-            return(
-                <>
-                <h1>Unable to load</h1>
-                </>
-            )
-        } else if(this.props.isLoading === "done") {
             return(
                 <>
                 <h1>My Reviews</h1>
@@ -45,6 +31,6 @@ class ProtectedReviewIndexPage extends Component {
             )
         }
     }
-}
+
 
 export default ProtectedReviewIndexPage

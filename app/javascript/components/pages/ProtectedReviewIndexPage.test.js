@@ -10,9 +10,8 @@ describe("When ProtectedReviewIndexPage renders", () => {
   it("displays all reviews created by current user", () => {
 
     let myReviews = []
-    let isLoading = "done"
 
-    const protectedReviewIndexPage = shallow(<ProtectedReviewIndexPage review={myReviews} isLoading={isLoading}/>)
+    const protectedReviewIndexPage = shallow(<ProtectedReviewIndexPage review={myReviews}/>)
     const protectedReviewIndexPageHeading = protectedReviewIndexPage.find("h1")
     expect(protectedReviewIndexPageHeading.text()).toEqual("My Reviews")
   })

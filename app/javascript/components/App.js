@@ -16,12 +16,10 @@ class App extends React.Component {
     this.state = {
         reviews: [],
         schools: [],
-        isLoading: false
     }
 }
 
 async componentDidMount() {
-  this.setState({ isLoading: true})
   this.readReview()
   this.readSchool()
 }
@@ -29,7 +27,7 @@ async componentDidMount() {
 readReview = () => {
   fetch("http://localhost:3000/reviews")
   .then(response => response.json())
-  .then(reviewsArray => this.setState({reviews: reviewsArray, isLoading: "done" }))
+  .then(reviewsArray => this.setState({reviews: reviewsArray}))
   .catch(errors => console.log("Review read errors:", errors))
 }
 
@@ -57,7 +55,7 @@ readSchool = () => {
             <Route path="/myreviews" render={(props) => {
               if(current_user) {
                 let myReviews = this.state.reviews.filter(review => review.user_id === current_user.id)
-                return <ProtectedReviewIndexPage review={myReviews} isLoading={this.state.isLoading}/>
+                return <ProtectedReviewIndexPage review={myReviews}/>
               } else {
                 return <Route path="/reviewindex" render={(props) => <ReviewIndexPage reviews={this.state.reviews}/>} />
               }
