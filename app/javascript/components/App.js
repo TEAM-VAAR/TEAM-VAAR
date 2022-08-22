@@ -10,8 +10,6 @@ import SchoolNew from "./pages/SchoolNew"
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-
-
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -27,21 +25,21 @@ componentDidMount() {
 }
 
 readReview = () => {
-  fetch("http://localhost:3000/reviews")
+  fetch("/reviews")
   .then(response => response.json())
   .then(reviewsArray => this.setState({reviews: reviewsArray}))
   .catch(errors => console.log("Review read errors:", errors))
 }
 
 readSchool = () => {
-  fetch("http://localhost:3000/schools")
+  fetch("/schools")
   .then(response => response.json())
   .then(schoolsArray => this.setState({schools: schoolsArray}))
   .catch(errors => console.log("School read errors:", errors))
 }
 
 createReview = (newReview) => {
-  fetch("http://localhost:3000/reviews", {
+  fetch("/reviews", {
     body: JSON.stringify(newReview),
     headers: {
       "Content-Type": "application/json"
@@ -54,7 +52,7 @@ createReview = (newReview) => {
 }
 
 createSchool = (newSchool) => {
-  fetch("http://localhost:3000/schools", {
+  fetch("/schools", {
     body: JSON.stringify(newSchool),
     headers: {
       "Content-Type": "application/json"
@@ -67,14 +65,6 @@ createSchool = (newSchool) => {
 }
 
   render () {
-    // const {
-    //   logged_in,
-    //   current_user,
-    //   new_user_route,
-    //   sign_in_route,
-    //   sign_out_route,
-    // } = this.props
-    // console.log(this.props)
 
     return (
       <>

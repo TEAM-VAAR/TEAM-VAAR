@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card, CardBody, Col, CardTitle, CardText } from 'reactstrap'
+import { Link } from 'react-router-dom'
 
 class SchoolIndexPage extends Component {
   render() {
@@ -16,6 +17,7 @@ class SchoolIndexPage extends Component {
                             <CardBody>
                                 <CardTitle>{school.name}</CardTitle>
                                 <CardText>{school.id}</CardText>
+                                <Link to={`/schoolshow/${school.id}`}>View profile</Link>
                             </CardBody>
                     </Card>
                 </Col>

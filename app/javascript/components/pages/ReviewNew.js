@@ -1,22 +1,23 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
-import { Redirect } from 'react-router-dom'
-
+import { Redirect, withRouter } from 'react-router-dom'
 
 class ReviewNew extends Component {
     constructor(props) {
         super(props)
+
         this.state = {
             newReview: {
                 title: "",
                 date_posted: "",
                 review_text: "",
                 user_id: this.props.current_user.id,
-                school_id: ""
+                school_id: this.props.location.state.school_id
+
             },
             submitted: false
         }
-    }
+      }
 
     handleChange = (e) => {
         const { newReview } = this.state
@@ -29,9 +30,9 @@ class ReviewNew extends Component {
         this.setState({ submitted: true })
     }
 
-  render() {
+  render() {  
     return (
-        <>
+      <>
       <h3>New Review</h3>
 
       <Form>
@@ -65,26 +66,16 @@ class ReviewNew extends Component {
             />
         </FormGroup>
 
-          <FormGroup>
-            <Label for="school_id">School ID</Label>
-            <Input 
-              type="text" 
-              name="school_id" 
-              onChange={this.handleChange} 
-              value={this.state.newReview.school_id}   
-            />
-        </FormGroup>
-
         <Button
             name="submit"
             onClick={this.handleSubmit}>
             Submit
         </Button>
           { this.state.submitted && <Redirect to="/reviewindex"/> }
-      </Form>
+      </Form>                        
       </>
     )
   }
 }
 
-export default ReviewNew
+export default withRouter(ReviewNew)
