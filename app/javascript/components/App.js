@@ -65,8 +65,19 @@ createSchool = (newSchool) => {
   .catch(errors => console.log("New school errors: ", errors))
 }
 
-  render () {
+deleteReview = (id) => {
+  fetch(`/reviews/${id}`, {
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "DELETE"
+  })
+  .then(response => response.json())
+  .then(() => this.readReview())
+  .catch(errors => console.log("delete errors:", errors))
+}
 
+  render () {
     const {
       current_user
     } = this.props
@@ -83,7 +94,7 @@ createSchool = (newSchool) => {
             <Route path="/myreviews" render={(props) => {
               if(current_user) {
                 let myReviews = this.state.reviews.filter(review => review.user_id === current_user.id)
-                return <ProtectedReviewIndexPage review={myReviews} schools={this.state.schools}/>
+                return <ProtectedReviewIndexPage review={myReviews} schools={this.state.schools} deleteReview={this.deleteReview}/>
               }
             }} />
             <Route path="/schoolshow/:id" render ={(props) => {
