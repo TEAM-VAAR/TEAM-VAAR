@@ -15,7 +15,8 @@ class Header extends Component {
 
     return (
       <>
-      <h1>HonestReviews.com</h1>
+      <h1> <img src="https://pbs.twimg.com/media/Fai3ImPUIAIC2Wk?format=jpg&name=small" height= "100px" alt="small Honest Reviews logo" className="MML" /></h1>
+
       <Nav>
           {/* Home page link for all users */}
           {
@@ -70,7 +71,6 @@ class Header extends Component {
               </a>
             </NavItem>
           )}
-
           {/* New Review link for logged in user */}
           {logged_in && (
             <NavItem>
