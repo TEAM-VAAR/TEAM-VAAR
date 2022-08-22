@@ -75,25 +75,4 @@ RSpec.describe "Reviews", type: :request do
     end
   end
 
-  # describe "DELETE /destroy" do 
-  #   it "deletes a review" do 
-  #     review_params = {
-  #       review: {
-  #         title: "My first review",
-  #         date_posted: "January 10th",
-  #         review_text: "What a great experience. I really recommend this school to everyone who has ever wanted to code. Thanks everyone involved.",
-  #         user_id: 2,
-  #         school_id: 1
-  #       }
-  #     }
-  #   post "/reviews", params: review_params
-  #   review = Review.first
-  #   delete "/reviews/#{review.id}"
-  #   expect(response).to have_http_status(200)
-  #   reviews = Review.all
-  #   expect(reviews).to be_empty
-  #   end
-  # end
-
-
 end
