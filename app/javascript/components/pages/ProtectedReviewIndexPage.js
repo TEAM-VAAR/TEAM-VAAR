@@ -4,11 +4,11 @@ import { Nav, NavItem } from 'reactstrap'
 
 class ProtectedReviewIndexPage extends Component {
     render() {
-        
+
             return(
                 <>
                 <h1>My Reviews</h1>
-                {this.props.review &&
+                {this.props.review && this.props.schools &&
                     <div>
                         <Row sm="3">
                             {this.props.review && this.props.review.map(review => {
@@ -27,6 +27,7 @@ class ProtectedReviewIndexPage extends Component {
                         </Row>
                     </div>
                 }
+
                 </>
             )
         }
