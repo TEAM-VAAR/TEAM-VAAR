@@ -56,8 +56,6 @@ readSchool = () => {
               if(current_user) {
                 let myReviews = this.state.reviews.filter(review => review.user_id === current_user.id)
                 return <ProtectedReviewIndexPage review={myReviews} schools={this.state.schools}/>
-              } else {
-                return <Route path="/reviewindex" render={(props) => <ReviewIndexPage reviews={this.state.reviews} schools={this.state.schools}/>} />
               }
             }} />
             <Route path="/schoolshow/:id" render ={(props) => {

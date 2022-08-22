@@ -17,7 +17,6 @@ class ProtectedReviewIndexPage extends Component {
                                             <CardBody>
                                                 <CardTitle>{review.title}</CardTitle>
                                                 <CardText>{review.review_text}</CardText>
-                                                <CardText>User ID: {review.user_id}</CardText>
                                                 <CardText>School ID: {review.school_id}</CardText>
                                                 <Button>Update</Button>
                                             </CardBody>
