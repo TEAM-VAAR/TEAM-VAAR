@@ -5,11 +5,16 @@ import Header from './components/Header'
 import ShowSchoolPage from "./pages/ShowSchoolPage"
 import ShowReviewPage from "./pages/ShowReviewPage"
 import ReviewIndexPage from "./pages/ReviewIndexPage"
+<<<<<<< HEAD
 import ProtectedReviewIndexPage from "./pages/ProtectedReviewIndexPage"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ReviewNew from "./pages/ReviewNew"
 import SchoolNew from "./pages/SchoolNew"
 
+=======
+import ReviewNew from "./pages/ReviewNew"
+import SchoolNew from "./pages/SchoolNew"
+>>>>>>> main
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
@@ -69,11 +74,14 @@ createSchool = (newSchool) => {
 
   render () {
 
+<<<<<<< HEAD
     const {
       current_user
     } = this.props
 
 
+=======
+>>>>>>> main
     return (
       <>
         <Router>
@@ -96,6 +104,9 @@ createSchool = (newSchool) => {
               let id = props.match.params.id
               let review = this.state.reviews.find(review => review.id === +id)
               return <ShowReviewPage review={review}/> }} />
+            <Route path="/reviewnew" render={() => {
+              return <ReviewNew createReview = {this.createReview} current_user={this.props.current_user} />
+            }} />
             <Route path="/reviewnew" render={() => {
               return <ReviewNew createReview = {this.createReview} current_user={this.props.current_user} />
             }} />

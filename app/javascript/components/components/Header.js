@@ -87,7 +87,6 @@ class Header extends Component {
               </a>
             </NavItem>
           )}
-
             {/* Home page link for all users */}
             {
             <NavItem>
