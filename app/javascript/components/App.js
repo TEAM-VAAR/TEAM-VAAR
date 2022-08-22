@@ -9,6 +9,7 @@ import ProtectedReviewIndexPage from "./pages/ProtectedReviewIndexPage"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ReviewNew from "./pages/ReviewNew"
 import SchoolNew from "./pages/SchoolNew"
+import NotFound from "./pages/NotFoundPage"
 
 
 class App extends React.Component {
@@ -103,6 +104,7 @@ createSchool = (newSchool) => {
             <Route path="/schoolnew" render={() => {
               return <SchoolNew createSchool = {this.createSchool} current_user={this.props.current_user} />
             }} />
+            <Route component={NotFound}/>
 
           </Switch>
         </Router>
