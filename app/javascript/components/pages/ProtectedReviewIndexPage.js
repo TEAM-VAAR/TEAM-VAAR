@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Card, CardBody, CardTitle, CardText, Button, Row  } from 'reactstrap';
-import { Nav, NavItem } from 'reactstrap'
+import { NavLink } from "react-router-dom";
 
 class ProtectedReviewIndexPage extends Component {
     render() {
@@ -19,6 +19,9 @@ class ProtectedReviewIndexPage extends Component {
                                                 <CardText>{review.review_text}</CardText>
                                                 <CardText>School ID: {review.school_id}</CardText>
                                                 <Button>Update</Button>
+                                                <NavLink to={`/myreviews`}>
+                                                    <Button onClick={() => this.props.deleteReview(review.id)}>Delete</Button>
+                                                </NavLink>                                            
                                             </CardBody>
                                     </Card>
                                 )

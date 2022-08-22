@@ -48,4 +48,31 @@ RSpec.describe "Reviews", type: :request do
     end
   end
 
+
+
+  describe "DELETE /destroy" do 
+    it "deletes a review" do 
+
+    user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
+    school1 = School.create(name: "LEARN academy")
+
+    review_params = {
+      review: {
+        title: "Test title",
+        date_posted: "August 19, 2022",
+        review_text: "Test review text",
+        user_id: user.id,
+        school_id: school1.id
+      }
+    }
+    post '/reviews', params: review_params
+
+    review = Review.first
+    delete "/reviews/#{review.id}"
+    expect(response).to have_http_status(200)
+    reviews = Review.all
+    expect(reviews).to be_empty
+    end
   end
+
+end
