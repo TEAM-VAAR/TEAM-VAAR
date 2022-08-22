@@ -5,18 +5,11 @@ import Header from './components/Header'
 import ShowSchoolPage from "./pages/ShowSchoolPage"
 import ShowReviewPage from "./pages/ShowReviewPage"
 import ReviewIndexPage from "./pages/ReviewIndexPage"
-<<<<<<< HEAD
 import ProtectedReviewIndexPage from "./pages/ProtectedReviewIndexPage"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ReviewNew from "./pages/ReviewNew"
 import SchoolNew from "./pages/SchoolNew"
 
-=======
-import ReviewNew from "./pages/ReviewNew"
-import SchoolNew from "./pages/SchoolNew"
->>>>>>> main
-
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends React.Component {
   constructor(props) {
@@ -74,14 +67,11 @@ createSchool = (newSchool) => {
 
   render () {
 
-<<<<<<< HEAD
     const {
       current_user
     } = this.props
 
 
-=======
->>>>>>> main
     return (
       <>
         <Router>
