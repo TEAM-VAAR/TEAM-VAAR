@@ -23,27 +23,27 @@ export default AboutUs;
 
 const items = [
   {
-    src: "https://picsum.photos/id/700/1200/400",
+    src: "https://avatars.githubusercontent.com/u/74055731?v=4",
     altText: "Project Manager",
     caption: "Alvin Accad",
     key: 1,
     linkedin: <a href="https://www.linkedin.com/in/alvin-a-a1b826189/">linkedin</a>,
     GitHub: <a href=" https://github.com/alvingithub1">GitHub</a>,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "I am a full-stack developer with experience building websites and web applications. I enjoy working with others on solving problems and communicating what can be done to solve them.",
   },
   {
-    src: "https://picsum.photos/id/678/1200/400",
+    src: "https://avatars.githubusercontent.com/u/73265363?v=4",
     altText: "Product Manager",
     caption: "Alexander Ballou",
     key: 2,
     linkedin: <a href="https://www.linkedin.com/in/alexander-ballou/">linkedin</a>,
     GitHub: <a href="https://github.com/necessities">GitHub</a>,
     description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+      "I am a full stack web developer and software engineer with a background in IT and DevOps. I have experience working for a wide variety of organizations from large federal level ones to small consulting teams. I spend a lot of my free time tinkering with computers and learning about technology.",
   },
   {
-    src: "https://picsum.photos/id/456/1200/400",
+    src: "https://ca.slack-edge.com/T04B40L2C-U03K7G8TYU9-c8c0f535ad1b-512",
     altText: "Code Lead",
     caption: "Ricky Fort",
     key: 3,
@@ -53,14 +53,14 @@ const items = [
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
   },
   {
-    src: "https://picsum.photos/id/500/1200/400",
+    src: "https://avatars.githubusercontent.com/u/107439475?s=400&u=1f2cea854675cd8c7bf65d929f070581aa24ace0&v=4",
     altText: "Design Lead",
     caption: "Venessa Palmer",
     key: 4,
     linkedin: <a href="https://www.linkedin.com/in/venessa-palmer-855038225/">linkedin</a>,
     GitHub: <a href="https://github.com/VenessaSP">GitHub</a>,
     description:
-      "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem",
+      "Currently I am a student at a boot-camp style web development school in San Diego,  LEARN Academy. Here I am acquiring the necessary skills to become a junior web-developer. With over 480 hours of intense tutelage from experienced senior software developers, I am eager to apply my newly acquired skillset and be a contribution to the team! For this project I was responsible for styling, I wanted to create a visual representation of what the app is all about! I want users to focus on what the app is intended for while putting fun stylistic designs. ",
   },
 ];
 
