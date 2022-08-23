@@ -72,23 +72,31 @@ class Header extends Component {
               </NavItem>
             )}
 
-            {/* Sign up link for not logged in users */}
-            {!logged_in && (
-              <NavItem>
-                <a href={new_user_route} className="nav-link">
-                  Sign Up
-                </a>
-              </NavItem>
-            )}
 
-            {/* New Review link for logged in user */}
-            {logged_in && (
-              <NavItem>
-                <a href="/reviewnew" className="nav-link">
-                  New Review
-                </a>
-              </NavItem>
-            )}
+          {/* Sign up link for not logged in users */}
+          {!logged_in && (
+            <NavItem>
+              <a href={new_user_route} className="nav-link">
+                Sign Up
+              </a>
+            </NavItem>
+          )}
+          {/* New Review link for logged in user */}
+          {logged_in && (
+            <NavItem>
+              <a href="/reviewnew" className="nav-link">
+                New Review
+              </a>
+            </NavItem>
+          )}
+          {/* New Review link for logged in user */}
+          {logged_in && (
+            <NavItem>
+              <a href="/myreviews" className="nav-link">
+                My Reviews
+              </a>
+            </NavItem>
+          )}
 
             {/* Home page link for all users */}
             {
