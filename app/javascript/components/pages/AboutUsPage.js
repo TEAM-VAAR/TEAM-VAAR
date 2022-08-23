@@ -50,7 +50,7 @@ const items = [
     linkedin: <a href="https://www.linkedin.com/in/ariseson/">linkedin</a>,
     GitHub: <a href="https://github.com/AriseSon">GitHub</a>,
     description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+      "My name is Ricky Fort, my position in Team VAAR is the Tech Lead.",
   },
   {
     src: "https://avatars.githubusercontent.com/u/107439475?s=400&u=1f2cea854675cd8c7bf65d929f070581aa24ace0&v=4",
