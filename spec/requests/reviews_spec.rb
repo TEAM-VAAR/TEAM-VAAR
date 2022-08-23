@@ -11,8 +11,8 @@ RSpec.describe "Reviews", type: :request do
         title: "My first review",
         date_posted: "January 10th",
         review_text: "What a great experience. I really recommend this school to everyone who has ever wanted to code. Thanks everyone involved.",
-        user_id: 1,
-        school_id: 5
+        user_id: user.id,
+        school_id: school1.id
     )
 
    get '/reviews'
