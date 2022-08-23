@@ -39,3 +39,4 @@ yarn-debug.log*
 
 
 /coverage
+.DS_Store
