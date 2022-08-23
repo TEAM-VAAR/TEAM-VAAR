@@ -71,7 +71,6 @@ class Header extends Component {
               </a>
             </NavItem>
           )}
-
           {/* New Review link for logged in user */}
           {logged_in && (
             <NavItem>
@@ -80,7 +79,14 @@ class Header extends Component {
               </a>
             </NavItem>
           )}
-
+          {/* New Review link for logged in user */}
+          {logged_in && (
+            <NavItem>
+              <a href="/myreviews" className="nav-link">
+                My Reviews
+              </a>
+            </NavItem>
+          )}
             {/* Home page link for all users */}
             {
             <NavItem>
