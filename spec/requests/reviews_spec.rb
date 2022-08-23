@@ -48,6 +48,43 @@ RSpec.describe "Reviews", type: :request do
     end
   end
 
+  describe "POST /create" do
+    it "will not create a new review" do
+      user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
+      school1 = School.create(name: "LEARN academy")
+
+      review_params = {
+        review: {
+          title: "Test title",
+          date_posted: "August 19, 2022",
+          review_text: "Test review text",
+          user_id: user.id,
+          school_id: school1.id
+        }
+      }
+      post '/reviews', params: review_params
+
+      no_review_parms = {
+        no_review: {
+          date_posted: "August 19, 2022",
+          review_text: "Test review text",
+          user_id: user.id,
+          school_id: school1.id
+        }
+      }
+      
+      post '/reviews', params: no_review_parms
+
+      review = JSON.parse(response.body)
+      expect(response).to have_http_status(422)
+      expect(no_review['date_posted']).to eq "August 19, 2022"
+      expect(no_review['review_text']).to eq "Test review text"
+      expect(no_review['user_id']).to eq user.id
+      expect(no_review['school_id']).to eq school1.id
+    end
+  end
+
+
 
 
   describe "DELETE /destroy" do 
@@ -74,5 +111,7 @@ RSpec.describe "Reviews", type: :request do
     expect(reviews).to be_empty
     end
   end
+
+
 
 end
