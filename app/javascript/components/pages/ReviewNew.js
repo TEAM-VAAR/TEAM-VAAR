@@ -12,7 +12,7 @@ class ReviewNew extends Component {
                 date_posted: "",
                 review_text: "",
                 user_id: this.props.current_user.id,
-                school_id: this.props.location.state.school
+                school_id: this.props.location.state.school_id
 
             },
             submitted: false
