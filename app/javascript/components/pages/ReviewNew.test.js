@@ -6,19 +6,26 @@ Enzyme.configure({ adapter: new Adapter() })
 
 describe("When ReviewNew renders", () => {
     let renderedReviewNew;
-    let props = { current_user: {id:1} }
+    // let props = { current_user: {id:1} }
+    let props = { current_user: {id: 5} }
+
 
     beforeEach(() => {
         renderedReviewNew = shallow(<ReviewNew {...props} />)
     })
 
-    it("displays a heading", () => {
-        const reviewNewHeading = renderedReviewNew.find("h3")
-        expect(reviewNewHeading.text()).toEqual("New Review")  
-      })
+    it("finds a heading", () => {
+      const reviewNewHeading = renderedReviewNew
+      expect(reviewNewHeading.find("h3")).toHaveLength(1)
+    })
   
-      it("displays 4 FormGroups", () => {
-        const reviewNewHeading = renderedReviewNew.find("FormGroup")
-        expect(reviewNewHeading.length).toEqual(4)  
-      })
+    // it("finds the FormGroup", () => {
+    //   const reviewNewFormGroup = renderedReviewNew
+    //   expect(reviewNewFormGroup.find("FormGroup"))
+    //   })
+
+    // it("finds the Label", () => {
+    //   const reviewNewLabel = renderedReviewNew
+    //   expect(reviewNewLabel.find("Label"))
+    // })
   })

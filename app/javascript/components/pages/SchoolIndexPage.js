@@ -12,7 +12,7 @@ class SchoolIndexPage extends Component {
 
         { schools && schools.map(school => {
             return(
-                <Col>
+                <Col key={school.id}>
                     <Card id={school.id}>
                             <CardBody>
                                 <CardTitle>{school.name}</CardTitle>

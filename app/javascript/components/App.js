@@ -7,6 +7,7 @@ import ShowReviewPage from "./pages/ShowReviewPage"
 import ReviewIndexPage from "./pages/ReviewIndexPage"
 import ReviewNew from "./pages/ReviewNew"
 import SchoolNew from "./pages/SchoolNew"
+import ReviewEdit from "./pages/ReviewEdit"
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
@@ -64,7 +65,33 @@ createSchool = (newSchool) => {
   .catch(errors => console.log("New school errors: ", errors))
 }
 
+updateReview =(editReview, id) => {
+  fetch(`/reviews/${id}`, {
+    body: JSON.stringify(editReview),
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(review => {
+    this.setState({
+      reviews: this.state.reviews.map(review => {
+        if(review.id === id) {
+          return review = editReview
+        } else {
+          return review
+        }
+      })
+    })
+  })
+  .catch(error => console.log(error))
+}
+
   render () {
+    const {
+      current_user,
+    } = this.props
 
     return (
       <>
@@ -91,6 +118,17 @@ createSchool = (newSchool) => {
 
             <Route path="/schoolnew" render={() => {
               return <SchoolNew createSchool = {this.createSchool} current_user={this.props.current_user} />
+            }} />
+
+            <Route path="/reviewedit/:id" render={(props) => {
+              if(current_user) {
+                let id = +props.match.params.id
+                let review = this.state.reviews.find(review => review.id === id)
+                if(current_user.id === review.user_id) {
+                  let myReviews = this.state.reviews.filter(review => review.user_id === current_user.id)
+                  return <ReviewEdit review={myReviews} reviews={this.state.reviews} updateReview = {this.updateReview} current_user={this.props.current_user} />
+                }
+              }
             }} />
 
           </Switch>
