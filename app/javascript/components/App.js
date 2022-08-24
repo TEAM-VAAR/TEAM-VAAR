@@ -176,8 +176,7 @@ deleteReview = (id) => {
               }}
             />
 
-<Route component={NotFound}/>
-
+            <Route component={NotFound}/>
           </Switch>
         </Router>
       </>
