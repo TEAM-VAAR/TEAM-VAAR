@@ -48,34 +48,6 @@ RSpec.describe "Reviews", type: :request do
     end
   end
 
-  describe "PUT /update" do
-    it "updates an existing review" do
-      user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
-      school1 = School.create(name: "LEARN academy")
-
-      review_params = {
-        review: {
-          title: "Test title",
-          date_posted: "August 19, 2022",
-          review_text: "Update review text",
-          user_id: user.id,
-          school_id: school1.id
-        }
-     }
-     post '/reviews', params: review_params
-
-      review = JSON.parse(response.body)
-      expect(response).to have_http_status(200)
-      expect(review['title']).to eq "Test title"
-      expect(review['date_posted']).to eq "August 19, 2022"
-      expect(review['review_text']).to eq "Update review text"
-      expect(review['user_id']).to eq user.id
-      expect(review['school_id']).to eq school1.id
-    end
-  end
-
-  end
-
   describe "DELETE /destroy" do 
     it "deletes a review" do 
 
@@ -98,6 +70,30 @@ RSpec.describe "Reviews", type: :request do
     expect(response).to have_http_status(200)
     reviews = Review.all
     expect(reviews).to be_empty
+    end
+  end
+
+  describe "EDIT /update" do
+    it "will update a review" do
+
+      user = User.where(email: 'test@example.com').first_or_create(password: '12345678', password_confirmation: '12345678')
+      school1 = School.create(name: "LEARN academy")
+
+        review_params = {
+          review: {
+          title: "My First Review",
+          date_posted: "August 19, 2022",
+          review_text: "Test review text",
+          user_id: user.id,
+          school_id: school1.id
+        }
+      }
+      post '/reviews', params: review_params
+      review = Review.first
+      update_params = { review: { title: "My Second Review" } }
+      patch "/reviews/#{review.id}", params: update_params
+      expect(response).to have_http_status(200)
+      expect(response.body).to include("My Second Review")
     end
   end
 
