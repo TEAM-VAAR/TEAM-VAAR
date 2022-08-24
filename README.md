@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# honestreviews
+URL: https://intense-shore-50682.herokuapp.com/
 
-* Ruby version
+Honestreviews is a website for users to find honest, up-to-date information on schools they might be interested in attending. 
 
-* System dependencies
 
-* Configuration
+Current features of the project include:
+- creating a user account
+- creating a review for one of the pre added schools
+- ability to update and delete a review you have created
+- view reviews other users have left
 
-* Database creation
 
-* Database initialization
+Steps To Run Application: 
 
-* How to run the test suite
+1. git clone application into local directory
+2. cd into the application directory
+3. to install react dependencies run $ yarn
+4. to install ruby dependencies run $ bundle
+5. to setup the postgres database run $ rails db:reset
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+# About TEAM VAAR 
 
-* ...
+Venessa Palmer, Alvin Accad, Alex Ballou, Ricky Fort
