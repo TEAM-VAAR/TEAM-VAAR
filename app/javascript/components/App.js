@@ -1,3 +1,4 @@
+import AboutUsPage from "./pages/AboutUsPage";
 import React from "react"
 import SchoolIndexPage from "./pages/SchoolIndexPage"
 import HomePage from './pages/HomePage'
@@ -12,14 +13,18 @@ import SchoolNew from "./pages/SchoolNew"
 import NotFound from "./pages/NotFoundPage"
 
 
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-        reviews: [],
-        schools: [],
-    }
-}
+      reviews: [],
+      schools: [],
+    };
+  }
+
 
 async componentDidMount() {
   this.readReview()
@@ -84,13 +89,18 @@ deleteReview = (id) => {
     } = this.props
 
 
+
     return (
       <>
         <Router>
-        <Header {...this.props}/>
+          <Header {...this.props} />
           <Switch>
+
             <Route exact path="/" component={HomePage} />
             <Route path="/schoolindex" render={(props) => <SchoolIndexPage schools={this.state.schools}/>} />
+            <Route exact path="/aboutus">
+              <AboutUsPage />
+            </Route>
             <Route path="/reviewindex" render={(props) => <ReviewIndexPage reviews={this.state.reviews}/>} />
             <Route path="/myreviews" render={(props) => {
               if(current_user) {
@@ -114,12 +124,32 @@ deleteReview = (id) => {
             }} />
             <Route component={NotFound}/>
 
+
+            <Route
+              path="/schoolshow/:id"
+              render={(props) => {
+                let id = props.match.params.id;
+                let school = this.state.schools.find(
+                  (school) => school.id === +id
+                );
+                return <ShowSchoolPage school={school} />;
+              }}
+            />
+            <Route
+              path="/reviewshow/:id"
+              render={(props) => {
+                let id = props.match.params.id;
+                let review = this.state.reviews.find(
+                  (review) => review.id === +id
+                );
+                return <ShowReviewPage review={review} />;
+              }}
+            />
           </Switch>
         </Router>
-
       </>
     );
   }
 }
 
-export default App
+export default App;
