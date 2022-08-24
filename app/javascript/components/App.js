@@ -10,6 +10,7 @@ import ProtectedReviewIndexPage from "./pages/ProtectedReviewIndexPage"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ReviewNew from "./pages/ReviewNew"
 import SchoolNew from "./pages/SchoolNew"
+import ReviewEdit from "./pages/ReviewEdit"
 import NotFound from "./pages/NotFoundPage"
 import "./App.css";
 
@@ -68,6 +69,27 @@ createSchool = (newSchool) => {
   .catch(errors => console.log("New school errors: ", errors))
 }
 
+updateReview =(editReview, id) => {
+  fetch(`/reviews/${id}`, {
+    body: JSON.stringify(editReview),
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(review => {
+    this.setState({
+      reviews: this.state.reviews.map(review => {
+        if(review.id === id) {
+          return review = editReview
+        } else {
+          return review
+        }
+      })
+    })
+  })
+  .catch(error => console.log(error))
 deleteReview = (id) => {
   fetch(`/reviews/${id}`, {
     headers: {
@@ -84,8 +106,6 @@ deleteReview = (id) => {
     const {
       current_user
     } = this.props
-
-
 
     return (
       <>
@@ -120,6 +140,17 @@ deleteReview = (id) => {
               return <SchoolNew createSchool = {this.createSchool} current_user={this.props.current_user} />
             }} />
             <Route component={NotFound}/>
+
+            <Route path="/reviewedit/:id" render={(props) => {
+              if(current_user) {
+                let id = +props.match.params.id
+                let review = this.state.reviews.find(review => review.id === id)
+                if(current_user.id === review.user_id) {
+                  let myReviews = this.state.reviews.filter(review => review.user_id === current_user.id)
+                  return <ReviewEdit review={myReviews} reviews={this.state.reviews} updateReview = {this.updateReview} current_user={this.props.current_user} />
+                }
+              }
+            }} />
 
 
             <Route
