@@ -15,11 +15,8 @@ class ReviewsController < ApplicationController
 
     def update
         review = Review.find(params[:id])
-        if review.valid?
-            render json: review
-        else
-            render json: review.errors, status: 422
-        end
+        review.update(review_params)
+        render json: review
     end
 
     def show
