@@ -90,6 +90,8 @@ updateReview =(editReview, id) => {
     })
   })
   .catch(error => console.log(error))
+}
+
 deleteReview = (id) => {
   fetch(`/reviews/${id}`, {
     headers: {
@@ -139,7 +141,6 @@ deleteReview = (id) => {
             <Route path="/schoolnew" render={() => {
               return <SchoolNew createSchool = {this.createSchool} current_user={this.props.current_user} />
             }} />
-            <Route component={NotFound}/>
 
             <Route path="/reviewedit/:id" render={(props) => {
               if(current_user) {
@@ -148,10 +149,11 @@ deleteReview = (id) => {
                 if(current_user.id === review.user_id) {
                   let myReviews = this.state.reviews.filter(review => review.user_id === current_user.id)
                   return <ReviewEdit review={myReviews} reviews={this.state.reviews} updateReview = {this.updateReview} current_user={this.props.current_user} />
+                } else if(current_user.id !== review.user_id){
+                  return <Route component={NotFound} />
                 }
               }
             }} />
-
 
             <Route
               path="/schoolshow/:id"
@@ -173,6 +175,9 @@ deleteReview = (id) => {
                 return <ShowReviewPage review={review} />;
               }}
             />
+
+<Route component={NotFound}/>
+
           </Switch>
         </Router>
       </>

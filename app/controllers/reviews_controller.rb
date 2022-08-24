@@ -21,6 +21,7 @@ class ReviewsController < ApplicationController
         else
             render json: review.errors, status: 422
         end
+    end
 
     def destroy 
         review = Review.find(params[:id])
