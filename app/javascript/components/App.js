@@ -12,8 +12,6 @@ import ReviewNew from "./pages/ReviewNew"
 import SchoolNew from "./pages/SchoolNew"
 import ReviewEdit from "./pages/ReviewEdit"
 import NotFound from "./pages/NotFoundPage"
-
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
 class App extends React.Component {
