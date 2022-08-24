@@ -1,7 +1,7 @@
 # README
 
 
-# honestreviews.com
+# honestreviews
 URL: https://intense-shore-50682.herokuapp.com/
 
 Honestreviews is a website for users to find honest, up-to-date information on schools they might be interested in attending. 
