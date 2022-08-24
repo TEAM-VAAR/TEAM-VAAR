@@ -81,7 +81,7 @@ class Header extends Component {
           )}
           {/* New Review link for logged in user */}
           {logged_in && (
-            <NavItem>
+            <NavItem>ß
               <a href="/myreviews" className="nav-link">
                 My Reviews
               </a>
