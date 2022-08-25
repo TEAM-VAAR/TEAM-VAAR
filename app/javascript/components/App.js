@@ -12,6 +12,7 @@ import ReviewNew from "./pages/ReviewNew"
 import SchoolNew from "./pages/SchoolNew"
 import NotFound from "./pages/NotFoundPage"
 import "./App1.css"
+import AboutUs from './pages/AboutUsPage'
 
 
 class App extends React.Component {
@@ -160,6 +161,7 @@ deleteReview = (id) => {
               }}
             />
 
+            <Route exact path="/aboutus" component={AboutUs} />
             <Route component={NotFound}/>
 
           </Switch>
