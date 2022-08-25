@@ -10,6 +10,8 @@ class SchoolIndexPage extends Component {
         <>
         <h3>School Page</h3>
 
+        <Link to={"/schoolnew"}>Create a new school</Link>
+
         { schools && schools.map(school => {
             return(
                 <Col key={school.id}>

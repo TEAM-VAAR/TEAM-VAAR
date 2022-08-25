@@ -72,7 +72,7 @@ class ReviewNew extends Component {
             onClick={this.handleSubmit}>
             Submit
         </Button>
-          { this.state.submitted && <Redirect to="/reviewindex"/> }
+          { this.state.submitted && <Redirect to={`/schoolshow/${this.props.location.state.school_id}`} /> }
       </Form>                        
       </>
     )
