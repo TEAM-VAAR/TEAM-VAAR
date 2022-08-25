@@ -18,11 +18,13 @@ class ReviewsController < ApplicationController
     def update
         review = Review.find(params[:id])
         review.update(review_params)
-        if review.valid?
-            render json: review
-        else
-            render json: review.errors, status: 422
-        end
+        
+        render json: review
+    end
+
+    def show
+        review = Review.find(params[:id])
+        render json: review
     end
 
     def destroy 
