@@ -111,9 +111,6 @@ deleteReview = (id) => {
             <Route path="/reviewnew" render={() => {
               return <ReviewNew createReview = {this.createReview} current_user={this.props.current_user} />
             }} />
-            <Route path="/reviewnew" render={() => {
-              return <ReviewNew createReview = {this.createReview} current_user={this.props.current_user} />
-            }} />
             <Route path="/schoolnew" render={() => {
               return <SchoolNew createSchool = {this.createSchool} current_user={this.props.current_user} />
             }} />
