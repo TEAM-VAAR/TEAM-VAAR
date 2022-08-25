@@ -138,14 +138,14 @@ deleteReview = (id) => {
               return <ShowReviewPage review={review}/> }} />
             <Route path="/reviewnew" render={() => {
               if(current_user) {
-                return <ReviewNew createReview = {this.createReview} current_user={this.props.current_user} />
+                return <ReviewNew createReview = {this.createReview} current_user={current_user} />
               } else {
                 return <Route component={NotFound} />
               }
             }} />
             <Route path="/schoolnew" render={() => {
               if(current_user) {
-                return <SchoolNew createSchool = {this.createSchool} current_user={this.props.current_user} />
+                return <SchoolNew createSchool = {this.createSchool} current_user={current_user} />
               } else {
                 return <Route component={NotFound} />
               }
@@ -157,7 +157,7 @@ deleteReview = (id) => {
                 let review = this.state.reviews.find(review => review.id === id)
                 if(current_user.id === review.user_id) {
                   let myReviews = this.state.reviews.filter(review => review.user_id === current_user.id)
-                  return <ReviewEdit review={myReviews} reviews={this.state.reviews} updateReview = {this.updateReview} current_user={this.props.current_user} />
+                  return <ReviewEdit review={myReviews} reviews={this.state.reviews} updateReview = {this.updateReview} current_user={current_user} />
                 } else if(current_user.id !== review.user_id){
                   return <Route component={NotFound} />
                 } else {
