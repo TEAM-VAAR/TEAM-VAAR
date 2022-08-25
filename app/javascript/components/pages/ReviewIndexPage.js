@@ -17,8 +17,6 @@ class ReviewIndexPage extends Component {
                                 <CardBody>
                                     <CardTitle>{review.title}</CardTitle>
                                     <CardText>{review.review_text}</CardText>
-                                    <Link to={{ pathname: `/reviewedit/${review.id}`, state: {review_id: review.id} }}>Edit Review</Link>
-                                    <br />
                                     <Link to={{ pathname: `/reviewshow/${review.id}` }}>Show Review</Link>
                                 </CardBody>
                         </Card>

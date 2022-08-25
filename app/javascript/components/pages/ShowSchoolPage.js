@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom";
-import { Card, CardImg, CardBody, CardTitle, CardText, Button } from 'reactstrap'
+import { Card, CardImg, CardBody, CardTitle, CardText, Button, Col } from 'reactstrap'
 import { Link, useNavigate } from 'react-router-dom'
 
 
 class ShowSchoolPage extends Component {
     render() {
         let { school } = this.props
+        let { review } = this.props        
 
         return (
             <>
@@ -20,6 +21,21 @@ class ShowSchoolPage extends Component {
                             </CardBody>
                         </Card>
                     }
+                </div>
+
+                <h3>{"School Reviews"}</h3>
+
+                <div>
+                        {review && review.map(review => { 
+                            return(
+                        <Card key={review.id}>
+                        <CardBody>
+                            <CardTitle>{review.title}</CardTitle>
+                            <CardText>{review.review_text}</CardText>
+                        </CardBody>
+                    </Card>
+                            )
+                    })}
                 </div>
             </>
         )

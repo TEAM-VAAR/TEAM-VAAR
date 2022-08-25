@@ -20,4 +20,21 @@ describe("When ShowSchoolPage renders", () => {
     const schoolShowHeading = renderedSchoolShow.find("Card")
     expect(schoolShowHeading.length).toEqual(1)
   })
+
+  it("displays h3 header", () => {
+    const schoolShowHeading = renderedSchoolShow.find("h3")
+    expect(schoolShowHeading.text()).toEqual("School Reviews")  
+  })
+
+  it("displays one CardBody", () => {
+    const schoolShowHeading = renderedSchoolShow.find("CardBody")
+    expect(schoolShowHeading.length).toEqual(1)
+  })
+
+  it("displays one link", () => {
+    const schoolShowHeading = renderedSchoolShow.find("Link")
+    expect(schoolShowHeading.text()).toEqual("Write a review")  
+  })
+
+  
 })

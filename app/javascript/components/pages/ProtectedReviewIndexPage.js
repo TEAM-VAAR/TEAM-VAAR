@@ -18,7 +18,9 @@ class ProtectedReviewIndexPage extends Component {
                                                 <CardTitle>{review.title}</CardTitle>
                                                 <CardText>{review.review_text}</CardText>
                                                 <CardText>School ID: {review.school_id}</CardText>
-                                                <Button>Update</Button>
+                                                <NavLink to={{ pathname: `/reviewedit/${review.id}`, state: {review_id: review.id} }}>
+                                                    <Button>Update</Button>
+                                                </NavLink>
                                                 <NavLink to={`/myreviews`}>
                                                     <Button onClick={() => this.props.deleteReview(review.id)}>Delete</Button>
                                                 </NavLink>                                            
