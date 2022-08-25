@@ -115,7 +115,9 @@ deleteReview = (id) => {
           <Header {...this.props} />
           <Switch>
 
-            <Route exact path="/" component={HomePage} />
+            <Route exact path="/">
+              <HomePage {...this.props} />
+            </Route>
             <Route path="/schoolindex" render={(props) => <SchoolIndexPage schools={this.state.schools}/>} />
             <Route exact path="/aboutus">
               <AboutUsPage />
