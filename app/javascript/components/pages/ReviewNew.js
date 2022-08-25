@@ -30,7 +30,8 @@ class ReviewNew extends Component {
         this.setState({ submitted: true })
     }
 
-  render() {  
+  render() {
+
     return (
       <>
       <h3>New Review</h3>

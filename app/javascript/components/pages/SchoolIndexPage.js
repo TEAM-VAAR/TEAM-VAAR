@@ -10,6 +10,7 @@ class SchoolIndexPage extends Component {
         <>
          { schools && schools.map(school => {
             return(
+
                 
                 <div>
                 <Card
@@ -42,7 +43,17 @@ class SchoolIndexPage extends Component {
                 </Card>
               </div>
 
-                
+              
+                <Col key={school.id}>
+                    <Card id={school.id}>
+                            <CardBody>
+                                <CardTitle>{school.name}</CardTitle>
+                                <CardText>{school.id}</CardText>
+                                <Link to={`/schoolshow/${school.id}`}>View profile</Link>
+                            </CardBody>
+                    </Card>
+                </Col>
+
             )
         })}
         </>
@@ -51,17 +62,3 @@ class SchoolIndexPage extends Component {
 
 }
 export default SchoolIndexPage
-
-
-
-
-
-{/* <Col>
-                    <Card id={school.id}>
-                            <CardBody>
-                                <CardTitle>{school.name}</CardTitle>
-                                <CardText>{school.id}</CardText>
-                                <Link to={`/schoolshow/${school.id}`}>View profile</Link>
-                            </CardBody>
-                    </Card>
-                </Col> */}
