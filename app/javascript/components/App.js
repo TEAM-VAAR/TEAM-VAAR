@@ -1,8 +1,8 @@
-import AboutUsPage from "./pages/AboutUsPage";
 import React from "react"
 import SchoolIndexPage from "./pages/SchoolIndexPage"
 import HomePage from './pages/HomePage'
 import Header from './components/Header'
+import Footer from './components/Footer'
 import ShowSchoolPage from "./pages/ShowSchoolPage"
 import ShowReviewPage from "./pages/ShowReviewPage"
 import ReviewIndexPage from "./pages/ReviewIndexPage"
@@ -10,19 +10,18 @@ import ProtectedReviewIndexPage from "./pages/ProtectedReviewIndexPage"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ReviewNew from "./pages/ReviewNew"
 import SchoolNew from "./pages/SchoolNew"
-import ReviewEdit from "./pages/ReviewEdit"
 import NotFound from "./pages/NotFoundPage"
-import "./App.css";
+import "./App1.css"
+
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      reviews: [],
-      schools: [],
-    };
-  }
-
+        reviews: [],
+        schools: [],
+    }
+}
 
 async componentDidMount() {
   this.readReview()
@@ -69,29 +68,6 @@ createSchool = (newSchool) => {
   .catch(errors => console.log("New school errors: ", errors))
 }
 
-updateReview =(editReview, id) => {
-  fetch(`/reviews/${id}`, {
-    body: JSON.stringify(editReview),
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(response => response.json())
-  .then(review => {
-    this.setState({
-      reviews: this.state.reviews.map(review => {
-        if(review.id === id) {
-          return review = editReview
-        } else {
-          return review
-        }
-      })
-    })
-  })
-  .catch(error => console.log(error))
-}
-
 deleteReview = (id) => {
   fetch(`/reviews/${id}`, {
     headers: {
@@ -109,17 +85,14 @@ deleteReview = (id) => {
       current_user
     } = this.props
 
+
     return (
       <>
         <Router>
-          <Header {...this.props} />
+        <Header {...this.props}/>
           <Switch>
-
             <Route exact path="/" component={HomePage} />
             <Route path="/schoolindex" render={(props) => <SchoolIndexPage schools={this.state.schools}/>} />
-            <Route exact path="/aboutus">
-              <AboutUsPage />
-            </Route>
             <Route path="/reviewindex" render={(props) => <ReviewIndexPage reviews={this.state.reviews}/>} />
             <Route path="/myreviews" render={(props) => {
               if(current_user) {
@@ -188,11 +161,14 @@ deleteReview = (id) => {
             />
 
             <Route component={NotFound}/>
+
           </Switch>
+          <Footer />
         </Router>
+
       </>
     );
   }
 }
 
-export default App;
+export default App
