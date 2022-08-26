@@ -1,0 +1,36 @@
+.schools-page {
+  background-image: url(https://o.remove.bg/downloads/6e224873-bd03-48fa-bc7b-219937bde909/HonestReviews-removebg-preview.png);
+  position: relative;
+}
+
+.schools, .reviews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 30px;
+}
+
+.school, .review {
+  width: 18rem;
+  background-color: rgba(255, 108, 44, .6);
+}
+
+.video-wrapper {
+  position: relative;
+  margin: 5px;
+  height: 100vh;
+}
+
+.video-wrapper img {
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-container .schools {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+}
