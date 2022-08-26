@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ReviewNew from "./pages/ReviewNew"
 import SchoolNew from "./pages/SchoolNew"
 import NotFound from "./pages/NotFoundPage"
-import "./App1.css"
+import './App.css'
 import AboutUs from './pages/AboutUsPage'
 
 
