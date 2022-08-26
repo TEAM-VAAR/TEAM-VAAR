@@ -5,10 +5,14 @@ import SchoolIndexPage from './SchoolIndexPage'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe("When SchoolIndex renders", () => {
-    it("displays a heading", () => {
-      const schoolIndexPage = shallow(<SchoolIndexPage />)
-      const schoolIndexPageHeading = schoolIndexPage.find("h3")
+    it("displays a Card", () => {
+
+      let schools = [{name: "LEARN academy"}, {name: "testing school"}]
+      const schoolIndexPage = shallow(<SchoolIndexPage schools={schools} />)
+      const schoolIndexPageCard = schoolIndexPage.find("Card")
+      const schoolIndexPageCardTitle = schoolIndexPage.find("CardTitle")
   
-      expect(schoolIndexPageHeading.text()).toEqual("School Page")  
+      expect(schoolIndexPageCard.length).toEqual(2)
+      expect(schoolIndexPageCardTitle.length).toEqual(2)
     })
   })
