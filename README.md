@@ -116,16 +116,16 @@ HonestReviews is a website for users to find honest, up-to-date information on s
 
 ### Contributors
 
-- Venessa Palmer
+- Venessa Palmer - Design Lead
     - [GitHub](https://github.com/VenessaSP)
     - [LinkedIn](https://www.linkedin.com/in/venessa-palmer-855038225/)
-- Alvin Accad
+- Alvin Accad - Project Manager
     - [GitHub](https://github.com/alvingithub1)
     - [LinkedIn](https://www.linkedin.com/in/alvin-a-a1b826189/)
-- Alex Ballou
+- Alex Ballou - Product Manager
     - [GitHub](https://github.com/necessities)
     - [LinkedIn](https://www.linkedin.com/in/alexander-ballou/)
-- Ricky Fort
+- Ricky Fort - Tech Lead
     - [GitHub](https://github.com/AriseSon)
     - [LinkedIn](https://www.linkedin.com/in/ariseson/)
 
