@@ -5,9 +5,9 @@ import Header from './Header'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe("When Header renders", () => {
-  it("displays 5 total NavItem", () => {
+  it("displays 1 total NavItem", () => {
     const header = shallow(<Header />)
     const headerHeading = header.find("NavItem")
-    expect(headerHeading.length).toEqual(6)
+    expect(headerHeading.length).toEqual(1)
   })
 })

@@ -12,7 +12,7 @@ describe("When AboutUs renders", () => {
       const aboutUsPageCarousel = aboutUsPage.find("AboutUsCarousel")
   
       expect(aboutUsPageHeading.text()).toEqual("About Us")  
-      expect(aboutUsPageBody).toEqual({})
-      expect(aboutUsPageCarousel).toEqual({})
+      expect(aboutUsPage.html()).toMatchSnapshot()
+      
     })
   })

@@ -13,7 +13,6 @@ class AboutUs extends Component {
       <>
         <h2>About Us</h2>
         <AboutUsCarousel />
-        <div>Footer</div>
       </>
     );
   }
