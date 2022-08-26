@@ -1,20 +1,22 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState } from 'react';
+
 import {
   Carousel,
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
-} from "reactstrap";
+} from 'reactstrap';
+
+import "./Aboutus.style.css";
 
 class AboutUs extends Component {
   render() {
     return (
-      <>
-        <h2>About Us</h2>
+      <div style={{ margin: '10px 20px' }}>
+        <h2 style={{ marginBottom: '10px' }}>Meet The Team!</h2>
         <AboutUsCarousel />
-        <div>Footer</div>
-      </>
+      </div>
     );
   }
 }
@@ -23,52 +25,52 @@ export default AboutUs;
 
 const items = [
   {
-    src: "https://avatars.githubusercontent.com/u/74055731?v=4",
-    altText: "Project Manager",
-    caption: "Alvin Accad",
+    src: 'https://avatars.githubusercontent.com/u/74055731?v=4',
+    altText: 'Project Manager',
+    caption: 'Alvin Accad',
     key: 1,
     linkedin: (
-      <a href="https://www.linkedin.com/in/alvin-a-a1b826189/">linkedin</a>
+      <a href='https://www.linkedin.com/in/alvin-a-a1b826189/'>linkedin</a>
     ),
-    GitHub: <a href=" https://github.com/alvingithub1">GitHub</a>,
+    GitHub: <a href=' https://github.com/alvingithub1'>GitHub</a>,
     description:
-      "I am a full-stack developer with experience building websites and web applications. I enjoy working with others on solving problems and communicating what can be done to solve them.",
+      'I am a full-stack developer with experience building websites and web applications. I enjoy working with others on solving problems and communicating what can be done to solve them.',
   },
   {
-    src: "https://avatars.githubusercontent.com/u/73265363?v=4",
-    altText: "Product Manager",
-    caption: "Alexander Ballou",
+    src: 'https://avatars.githubusercontent.com/u/73265363?v=4',
+    altText: 'Product Manager',
+    caption: 'Alexander Ballou',
     key: 2,
     linkedin: (
-      <a href="https://www.linkedin.com/in/alexander-ballou/">linkedin</a>
+      <a href='https://www.linkedin.com/in/alexander-ballou/'>linkedin</a>
     ),
-    GitHub: <a href="https://github.com/necessities">GitHub</a>,
+    GitHub: <a href='https://github.com/necessities'>GitHub</a>,
     description:
-      "I am a full stack web developer and software engineer with a background in IT and DevOps. I have experience working for a wide variety of organizations from large federal level ones to small consulting teams. I spend a lot of my free time tinkering with computers and learning about technology.",
+      'I am a full stack web developer and software engineer with a background in IT and DevOps. I have experience working for a wide variety of organizations from large federal level ones to small consulting teams. I spend a lot of my free time tinkering with computers and learning about technology.',
   },
   {
-    src: "https://ca.slack-edge.com/T04B40L2C-U03K7G8TYU9-c8c0f535ad1b-512",
-    altText: "Code Lead",
-    caption: "Ricky Fort",
+    src: 'https://ca.slack-edge.com/T04B40L2C-U03K7G8TYU9-c8c0f535ad1b-512',
+    altText: 'Code Lead',
+    caption: 'Ricky Fort',
     key: 3,
-    linkedin: <a href="https://www.linkedin.com/in/ariseson/">linkedin</a>,
-    GitHub: <a href="https://github.com/AriseSon">GitHub</a>,
+    linkedin: <a href='https://www.linkedin.com/in/ariseson/'>linkedin</a>,
+    GitHub: <a href='https://github.com/AriseSon'>GitHub</a>,
     description:
-      "My name is Ricky Fort, my position in Team VAAR is the Tech Lead. During the process of our Honest Review Application, I displayed solid understanding of the technical needs of the project and maintained the teams highly motivated attitude.",
+      'My name is Ricky Fort, my position in Team VAAR is the Tech Lead. During the process of our Honest Review Application, I displayed solid understanding of the technical needs of the project and maintained the teams highly motivated attitude.',
   },
   {
-    src: "https://avatars.githubusercontent.com/u/107439475?s=400&u=1f2cea854675cd8c7bf65d929f070581aa24ace0&v=4",
-    altText: "Design Lead",
-    caption: "Venessa Palmer",
+    src: 'https://avatars.githubusercontent.com/u/107439475?s=400&u=1f2cea854675cd8c7bf65d929f070581aa24ace0&v=4',
+    altText: 'Design Lead',
+    caption: 'Venessa Palmer',
     key: 4,
     linkedin: (
-      <a href="https://www.linkedin.com/in/venessa-palmer-855038225/">
+      <a href='https://www.linkedin.com/in/venessa-palmer-855038225/'>
         linkedin
       </a>
     ),
-    GitHub: <a href="https://github.com/VenessaSP">GitHub</a>,
+    GitHub: <a href='https://github.com/VenessaSP'>GitHub</a>,
     description:
-      "Currently I am a student at a boot-camp style web development school in San Diego,  LEARN Academy. Here I am acquiring the necessary skills to become a junior web-developer. With over 480 hours of intense tutelage from experienced senior software developers, I am eager to apply my newly acquired skillset and be a contribution to the team! For this project I was responsible for styling, I wanted to create a visual representation of what the app is all about! I want users to focus on what the app is intended for while putting fun stylistic designs. ",
+      'Currently I am a student at a boot-camp style web development school in San Diego,  LEARN Academy. Here I am acquiring the necessary skills to become a junior web-developer. With over 480 hours of intense tutelage from experienced senior software developers, I am eager to apply my newly acquired skillset and be a contribution to the team! For this project I was responsible for styling, I wanted to create a visual representation of what the app is all about! I want users to focus on what the app is intended for while putting fun stylistic designs. ',
   },
 ];
 
@@ -98,14 +100,18 @@ function AboutUsCarousel(args) {
       <CarouselItem
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
-        key={item.src}
+        key={item.key}
       >
-        <p className="description"> {item.description}</p>
-        <h3 className="linkedin"> {item.linkedin}</h3>
-        <p className="GitHub"> {item.GitHub}</p>
-
-        <img src={item.src} alt={item.altText} />
-
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div style={{ flex: '50%' }}>
+            <img src={item.src} alt={item.altText} />
+          </div>
+          <div style={{ margin: 'auto 5px', flex: '50%' }}>
+            <p className='description'> {item.description}</p>
+            <h3 className='linkedin'> {item.linkedin}</h3>
+            <p className='GitHub'> {item.GitHub}</p>
+          </div>
+        </div>
         <CarouselCaption
           captionText={item.altText}
           captionHeader={item.caption}
@@ -116,11 +122,11 @@ function AboutUsCarousel(args) {
 
   return (
     <Carousel
-      interval={false}
+       className='about-us-container'
       activeIndex={activeIndex}
       next={next}
       previous={previous}
-      {...args}
+     
     >
       <CarouselIndicators
         items={items}
@@ -129,13 +135,13 @@ function AboutUsCarousel(args) {
       />
       {slides}
       <CarouselControl
-        direction="prev"
-        directionText="Previous"
+        direction='prev'
+        directionText='Previous'
         onClickHandler={previous}
       />
       <CarouselControl
-        direction="next"
-        directionText="Next"
+        direction='next'
+        directionText='Next'
         onClickHandler={next}
       />
     </Carousel>
