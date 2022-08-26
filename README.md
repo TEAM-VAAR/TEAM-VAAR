@@ -2,8 +2,10 @@
 [Honest Reviews Live Link](https://intense-shore-50682.herokuapp.com/)
 
 ## Overview
-HonestReviews is a website for users to find honest, up-to-date information on schools they might be interested in attending.
 
+Have you ever wanted to switch careers and not sure what school to go to? Is the internet overwhelming you with vast amount of information and can’t make up your mind on a career change? Well, look no further, Honest Reviews is here to guide you into the future. We are here to give you real, honest reviews on variety of schools and what they are like so you make an informed decision. Join us now and see what everyone is talking about.
+
+HonestReviews is a website for users to find honest, up-to-date information on schools they might be interested in attending.
 
 ## Features
 - User Login and Authentication
