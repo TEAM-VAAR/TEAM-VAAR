@@ -12,21 +12,21 @@ class Header extends Component {
     } = this.props;
 
     return (
-      <header className="header">
-        <NavLink href="/">
+      <header className='header'>
+        <NavLink href='/'>
           <img
-            src="https://pbs.twimg.com/media/Fai3ImPUIAIC2Wk?format=jpg&name=small"
-            height="200px"
-            alt="small Honest Reviews logo"
-            className="smHRL"
+            src='https://pbs.twimg.com/media/Fai3ImPUIAIC2Wk?format=jpg&name=small'
+            height='200px'
+            alt='small Honest Reviews logo'
+            className='smHRL'
           />
         </NavLink>
 
-        <NavLink className="nav-links" href="/schoolindex">
+        <NavLink className='nav-links' href='/schoolindex'>
           ALL SCHOOLS
         </NavLink>
 
-        <NavLink href="/reviewindex">ALL REVIEWS</NavLink>
+        <NavLink href='/reviewindex'>ALL REVIEWS</NavLink>
 
         {logged_in && <NavLink href={sign_out_route}>SIGN OUT</NavLink>}
 
@@ -34,25 +34,16 @@ class Header extends Component {
 
         {!logged_in && <NavLink href={new_user_route}>SIGN UP</NavLink>}
 
-          {/* Sign up link for not logged in users */}
-          {!logged_in && (
-            <NavItem>
-              <a href={new_user_route} className="nav-link">
-                Sign Up
-              </a>
-            </NavItem>
-          )}
+        {/* New Review link for logged in user */}
+        {logged_in && (
+          <NavItem>
+            <a href='/myreviews' className='nav-link'>
+              My Reviews
+            </a>
+          </NavItem>
+        )}
 
-          {/* New Review link for logged in user */}
-          {logged_in && (
-            <NavItem>
-              <a href="/myreviews" className="nav-link">
-                My Reviews
-              </a>
-            </NavItem>
-          )}
-
-        <NavLink href="/aboutus">ABOUT US</NavLink>
+        <NavLink href='/aboutus'>ABOUT US</NavLink>
       </header>
     );
   }

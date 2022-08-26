@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import {
   Card,
+  CardBody,
   CardTitle,
   CardText,
+  CardLink,
   Button,
-} from "reactstrap";
-import { Link } from "react-router-dom";
+} from 'reactstrap';
+import { Link } from 'react-router-dom';
+
+import './schools.style.css';
 
 class SchoolIndexPage extends Component {
   render() {
@@ -13,33 +17,28 @@ class SchoolIndexPage extends Component {
 
     return (
       <>
-        {schools &&
-          schools.map((school) => {
-            return (
-              <div key={school.id}>
-                <Card
-                  id={school.id}
-                  className="my-2"
-                  color="light"
-                  outline
-                  style={{
-                    width: "25rem",
-                    height: "15rem",
-                    margin: "auto",
-                    outline: "primary",
-                  }}
-                >
-                  <CardTitle tag="h5">{school.name}</CardTitle>
-                  <CardText>
-                    <>School ID</>: {school.id} <br />
-                  </CardText>
-                  <Button color="dark" outline>
-                    <Link to={`/schoolshow/${school.id}`}>View profile</Link>
-                  </Button>
-                </Card>
-              </div>
-            );
-          })}
+        <h3>Explore the Schools</h3>
+        <div className='video-wrapper'>
+          <img src='https://media.nature.com/lw800/magazine-assets/d41586-019-00653-5/d41586-019-00653-5_16459152.jpg' />
+          <div className='schools'>
+            {schools &&
+              schools.map((school) => {
+                return (
+                  <Card key={school.id} className='school'>
+                    <CardBody>
+                      <CardTitle tag='h5'>{school.name}</CardTitle>
+                      <CardText>
+                        <>School ID</>: {school.id} <br />
+                      </CardText>
+                    </CardBody>
+                    <CardBody>
+                      <Link to={`/schoolshow/${school.id}`}>View profile</Link>
+                    </CardBody>
+                  </Card>
+                );
+              })}
+          </div>
+        </div>
       </>
     );
   }
