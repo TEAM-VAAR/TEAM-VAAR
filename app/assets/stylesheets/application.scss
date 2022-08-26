@@ -1,2 +1,47 @@
 @import 'bootstrap';
 
+.log-in-form {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    .field {
+       font-size: 20px;
+       margin-bottom: 5px;
+       color: #0C2D48;
+       font-family: 'Ubuntu';
+       input {
+          padding: 0.4rem;
+          font-size: 15px;
+          width: 100%;
+          font-family: 'Ubuntu';
+       }
+       input:hover {
+          background-color: #c06316;
+          color: #0C2D48; 
+       }
+    }
+}
+
+.sign-up-form {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    .field {
+       font-size: 20px;
+       margin-bottom: 5px;
+       color: #0C2D48;
+       font-family: 'Ubuntu';
+       input {
+          padding: 0.4rem;
+          font-size: 15px;
+          width: 100%;
+          font-family: 'Ubuntu';
+       }
+       input:hover {
+          background-color: #c06316;
+          color: #0C2D48; 
+       }
+    }
+}
