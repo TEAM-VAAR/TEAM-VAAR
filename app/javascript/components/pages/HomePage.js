@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardImgOverlay, CardTitle, CardText } from "reactstrap";
 
 import './HomePage.style.css';
 
 class HomePage extends Component {
   render() {
-    const { intro_video_url } = this.props;
+    const video_url = "https://drive.google.com/uc?export=download&id=1qfrNDkXFHYCXtzd9wPTCpSHFcj8FhDy6"
 
     return (
       <div>
@@ -13,7 +12,7 @@ class HomePage extends Component {
           <div className='hero__video'>
             <video
               id='intro_video'
-              src={intro_video_url}
+              src={video_url}
               controls
               autoPlay
               muted
@@ -21,7 +20,7 @@ class HomePage extends Component {
             >
               <p>
                 Your browser doesn't support HTML video. Here is a{' '}
-                <a href={intro_video_url}>link to the video</a> instead.
+                <a href={video_url}>link to the video</a> instead.
               </p>
             </video>
           </div>
