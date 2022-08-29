@@ -36,8 +36,8 @@ class ReviewNew extends Component {
     return (
       <>
      <br />
-        <h1 className="text-center">PlaceHolder</h1>
-        <h4 className="text-center">PlaceHolder</h4>
+        <h1 className="text-center">MY REVIEW</h1>
+        <h4 className="text-center"></h4>
         <br />
       <Form className='form'>
         <FormGroup className='formtitle'>
