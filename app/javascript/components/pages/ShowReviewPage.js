@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom";
 import { Card, CardImg, CardBody, CardTitle, CardText, Button } from 'reactstrap'
+import "./schools.style.css";
 
 
 class ShowReviewPage extends Component {
@@ -10,9 +11,14 @@ class ShowReviewPage extends Component {
 
         return (
             <>
+             <br />
+        <h1 className="text-center">REVIEWS FOR SCHOOL</h1>
+        <h4 className="text-center"></h4>
+        <br />
+        <br />
                 <div>
                     {review && 
-                        <Card id={review.id}>
+                        <Card className="showreview" id={review.id}>
                             <CardBody>
                                 <CardTitle>{review.title}</CardTitle>
                                 <CardText>

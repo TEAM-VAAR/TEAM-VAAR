@@ -3,7 +3,6 @@ import SchoolIndexPage from "./pages/SchoolIndexPage"
 import HomePage from './pages/HomePage'
 import Header from './components/Header'
 import Footer from './components/Footer'
-
 import ShowSchoolPage from "./pages/ShowSchoolPage"
 import ShowReviewPage from "./pages/ShowReviewPage"
 import ReviewIndexPage from "./pages/ReviewIndexPage"

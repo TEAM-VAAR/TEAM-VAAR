@@ -7,13 +7,17 @@ class ProtectedReviewIndexPage extends Component {
 
             return(
                 <>
-                <h1>My Reviews</h1>
+                <br />
+        <h1 className="text-center">MY REVIEWS</h1>
+        <h4 className="text-center"></h4>
+        <br />
+        <br />
                 {this.props.review && this.props.schools &&
                     <div>
                         <Row sm="3">
                             {this.props.review && this.props.review.map(review => {
                                 return(
-                                    <Card key={review.id}>
+                                    <Card className="myreviewcard" key={review.id}>
                                             <CardBody>
                                                 <CardTitle>{review.title}</CardTitle>
                                                 <CardText>{review.review_text}</CardText>
