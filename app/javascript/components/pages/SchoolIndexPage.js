@@ -10,7 +10,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-import './schools.style.css';
+import './schools-style.css';
 
 class SchoolIndexPage extends Component {
   render() {

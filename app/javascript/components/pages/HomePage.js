@@ -9,7 +9,7 @@ import {
   Button,
   CardSubtitle,
 } from "reactstrap";
-import "./schools.style.css";
+import "./schools-style.css";
 
 class HomePage extends Component {
   render() {

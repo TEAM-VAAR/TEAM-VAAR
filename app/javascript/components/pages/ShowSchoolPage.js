@@ -7,7 +7,7 @@ import {
   CardText,
   CardGroup,
 } from "reactstrap";
-import "./schools.style.css";
+import "./schools-style.css";
 
 class ShowSchoolPage extends Component {
   render() {

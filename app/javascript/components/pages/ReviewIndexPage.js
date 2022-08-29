@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, CardBody, Col, CardTitle, CardText, CardGroup } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
-import './schools.style.css';
+import './schools-style.css';
 
 class ReviewIndexPage extends Component {
   render() {

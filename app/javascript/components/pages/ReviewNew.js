@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import { Redirect, withRouter } from 'react-router-dom'
-import "./schools.style.css";
+import "./schools-style.css";
 
 class ReviewNew extends Component {
     constructor(props) {
