@@ -11,7 +11,6 @@ RSpec.describe "Schools", type: :request do
 
       schools = JSON.parse(response.body)
       expect(response).to have_http_status(200)
-      expect(schools.length).to match(schools.length)
       expect(schools.first).to include({"name"=>"LEARN Academy"})
     end
   end
