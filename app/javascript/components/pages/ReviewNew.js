@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import { Redirect, withRouter } from 'react-router-dom'
+import "./schools-style.css";
 
 class ReviewNew extends Component {
     constructor(props) {
@@ -34,10 +35,12 @@ class ReviewNew extends Component {
 
     return (
       <>
-      <h3>New Review</h3>
-
-      <Form>
-        <FormGroup>
+     <br />
+        <h1 className="text-center">MY REVIEW</h1>
+        <h4 className="text-center"></h4>
+        <br />
+      <Form className='form'>
+        <FormGroup className='formtitle'>
             <Label for="title">Title</Label>
             <Input 
               type="text" 

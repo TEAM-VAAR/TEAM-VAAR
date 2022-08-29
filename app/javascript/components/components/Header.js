@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink, NavItem } from "reactstrap";
 
+
 class Header extends Component {
   render() {
     const {
@@ -15,7 +16,7 @@ class Header extends Component {
       <header className='header'>
         <NavLink href='/'>
           <img
-            src='https://pbs.twimg.com/media/Fai3ImPUIAIC2Wk?format=jpg&name=small'
+            src='https://pbs.twimg.com/media/FbMSC_XaAAY6vmq?format=jpg&name=large'
             height='200px'
             alt='small Honest Reviews logo'
             className='smHRL'
@@ -36,11 +37,7 @@ class Header extends Component {
 
         {/* New Review link for logged in user */}
         {logged_in && (
-          <NavItem>
-            <a href='/myreviews' className='nav-link'>
-              My Reviews
-            </a>
-          </NavItem>
+          <NavLink href='/myreviews' className='nav-link'>MY REVIEWS</NavLink>
         )}
 
         <NavLink href='/aboutus'>ABOUT US</NavLink>

@@ -1,0 +1,305 @@
+.schools-page {
+  background-image: url(https://o.remove.bg/downloads/6e224873-bd03-48fa-bc7b-219937bde909/HonestReviews-removebg-preview.png);
+  position: relative;
+}
+
+.schools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 30px;
+}
+.showschoolscard {
+  color: rgb(154, 68, 18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.73);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px 0 rgb(1, 130, 222);
+  text-align: center;
+  font-size: 30px;
+  
+}
+
+.showreviewcard {
+  color: rgb(154, 68, 18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.73);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px 0 rgb(249, 1, 75);
+  text-align: center;
+  font-size: 30px;
+  
+}
+
+.schoolcardgroup2 {
+  display: flex;
+  flex-wrap: wrap;
+  
+  width: 700px;
+  margin-left: 360px;
+  
+}
+
+.schoolcardgroup3 {
+  display: flex;
+  flex-wrap: wrap;
+  
+  width: 1000px;
+  margin-left: 200px;
+  
+}
+
+.review {
+  color: rgb(154, 68, 18);
+  width: 25rem;
+  background-color: rgba(255, 255, 255, 0.73);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 13px 0 rgb(0, 0, 0);
+  text-align: center;
+  font-size: 30px;
+  
+}
+
+.reviews {
+  color: rgb(154, 68, 18);
+  text-align: center;
+  font-size: 50px;
+  
+}
+
+.school {
+  color: rgb(154, 68, 18);
+  width: 24.3rem;
+  background-color: rgba(255, 255, 255, 0.73);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 13px 0 rgb(132, 0, 0);
+  text-align: center;
+  font-size: 30px;
+  
+}
+
+.video-wrapper {
+  position: relative;
+  margin: 5px;
+  
+}
+
+.video-wrapper1 img {
+  width: 100%;
+  height: 900px;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+}
+.video-wrapper1 {
+  position: relative;
+  margin: 5px;
+  
+}
+
+.video-wrapper img {
+  width: 100%;
+  height: 1500px;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-wrapper2 img {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+}
+.video-wrapper2 {
+  position: relative;
+  margin: 5px;
+  
+}
+
+.video-container .schools {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+}
+
+.schooltitle {
+  font-size: 50px;
+  color: rgb(154, 68, 18);
+  text-align: center;
+  font-weight: bold;
+}
+
+.showtitle {
+  font-size: 50px;
+  color: rgb(0, 61, 136);
+  text-align: center;
+  font-weight: bold;
+}
+
+.showtext {
+  font-size: 50px;
+  color: rgb(196, 127, 0);
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.schoolcardgroup {
+  margin-left: 25px;
+  
+}
+
+.schoollink {
+  color: rgb(0, 0, 0);
+  font-size: 23px;
+  text-decoration: none;
+}
+.schoollink:hover {
+  color: rgb(254, 78, 175);
+  text-decoration: none;
+}
+
+.footer {
+  background-color: rgb(18, 179, 215);
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: rgb(154, 68, 18);
+  min-height: 18vh;
+  max-height: 18vh;
+
+}
+
+.h5 {
+  color: rgb(154, 68, 18);
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.h6 {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.reviewlink {
+  color: rgb(3, 163, 139);
+  font-size: 25px;
+  text-decoration: none;
+}
+.reviewlink:hover {
+  color: rgb(254, 78, 175);
+  text-decoration: none;
+}
+
+.schoollink2 {
+  color: rgb(31, 87, 255);
+  font-size: 30px;
+  text-decoration: none;
+}
+.schoollink2:hover {
+  color: rgb(254, 78, 175);
+  text-decoration: none;
+}
+
+.h7 {
+  color: rgb(196, 0, 33);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.h8 {
+  color: rgb(154, 68, 18);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.showreviewlink {
+  color: rgb(116, 0, 27);
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.cardimghome {
+  border-radius: 0px;
+  border-color: rgba(255, 255, 255, 0); 
+}
+
+.form {
+  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.73);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px 0 rgb(1, 130, 222);
+  text-align: center;
+  font-size: 30px;
+  margin-left: 80px;
+  
+}
+
+.img-center {
+  
+  margin-left: 100px;
+  width: 50%;
+  
+}
+
+.showreview {
+  color: rgb(154, 68, 18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 1000px;
+  background-color: rgba(255, 255, 255, 0.73);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px 0 rgb(249, 1, 75);
+  text-align: center;
+  font-size: 30px;
+  margin-left: 170px;
+  
+}
+
+.myreviewcard {
+  color: rgb(154, 68, 18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 1000px;
+  background-color: rgba(255, 255, 255, 0.73);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px 0 rgb(249, 1, 75);
+  text-align: center;
+  font-size: 30px;
+  margin-left: 170px;
+  
+}
